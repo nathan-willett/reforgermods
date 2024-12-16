@@ -219,18 +219,20 @@ class Bacon_GunBuilder_PlayerFactionLoadoutStorage {
 		return validItems;
 	}
 
+	// inc
 	bool IsItemValid(string item)
 	{
 		// Implement logic to check if the item exists or if the mod is loaded
 		return FileIO.FileExists(string.Format("$mod:/%1", item));
 	}
 
+	// inc
 	bool LoadItem(string itemName)
 	{
 		// Logic to load item into player's inventory
 		return true;
 	}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	bool ClearLoadoutSlot(string factionKey, int slotId) {
 		if (!playerLoadouts.Contains(factionKey))
