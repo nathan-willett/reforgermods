@@ -1,0 +1,287 @@
+classDiagram
+    class SCR_SaveLoadComponentClass {
+    }
+
+    class SCR_SaveLoadComponent {
+        - MINIMUM_AUTOSAVE_PERIOD
+        - GetInstance() void
+        - CanSaveOnExit() void
+        - GetDebugHeaderResourceName() void
+        - ContainsStruct(typename structType) void
+        - Autosave() void
+        - OnGameModeEnd(SCR_GameModeEndData) void
+        - OnPostInit(Entity) void
+    }
+
+    class SCR_SaveManagerCore {
+        - ITEM_SAVE_POSTFIX
+        - GAME_SESSION_STORAGE_FILE_NAME_TO_LOAD
+        - GAME_SESSION_STORAGE_USED_CLI
+        - CLI_PARAM
+        - m_SessionStorageCallback
+        - m_SessionSaveFileName
+        - m_WorkbenchMissionHeader
+        - m_OnSaved
+        - m_OnSaveFailed
+        - m_OnLoaded
+        - m_OnDeleted
+        - m_OnLatestSave
+        - m_bLoadedOnInit
+        - m_DebugDelete
+        - m_UploadCallback
+        - Save(ESaveType, string, WorldSaveManifest, WorldSaveItem)
+        - OverrideCurrentSave(ESaveType)
+        - Load(string)
+        - RestartAndLoad()
+        - RestartAndLoad(ESaveType, string)
+        - Delete(ESaveType, string)
+        - FileExists(ESaveType, string)
+        - FileExists(string)
+        - CanSaveToCloud()
+        - GetMeta(string)
+        - GetLocalSaveFiles(out notnull array<string>, ESaveType, bool)
+        - GetLocalSaveFiles(out notnull array<string>, ESaveType, string)
+        - IsDownloaded(string)
+        - CanSave(ESaveType)
+        - SetStruct(ESaveType, SCR_MissionStruct)
+        - Log(ESaveType)
+        - GetMissionFileName(string)
+        - GetCustomName(string)
+        - GetSaveTypeInfo(string)
+        - FindCallback(ESaveType)
+        - FindCallback(string)
+        - UploadToWorkshop(string)
+        - SetFileNameToLoad(SCR_MissionHeader)
+        - SetFileNameToLoad(string)
+        - ResetFileNameToLoad()
+        - FindFileNameById(string)
+        - SetCurrentMissionLatestSave(string)
+        - RemoveCurrentMissionLatestSave()
+        - FindCurrentMissionLatestSave(out string)
+        - SetLatestSave(string, string)
+        - RemoveLatestSave(string)
+        - FindLatestSave(string, out string)
+        - FindLatestSave(SCR_MissionHeader, out string)
+        - HasLatestSave(SCR_MissionHeader)
+        - GetOnSaved()
+        - GetOnSaveFailed()
+        - GetOnLoaded()
+        - GetOnDeleted()
+        - GetOnLatestSave()
+        - GetUploadCallback()
+        - LoadOnInit()
+        - InitDebugMissionHeader(out SCR_MissionHeader)
+        - OnUpdate(float)
+        - OnGameStart()
+        - OnGameStorageInitialize()
+        - OnGameEnd()
+    }
+
+    class SCR_DSSessionCallback {
+        - m_Struct
+        - m_bLoadPreview
+        - m_sCurrentFileName
+        - GetSaveType()
+        - GetInfo()
+        - GetExtension()
+        - SaveSession(string, WorldSaveManifest, WorldSaveItem)
+        - LoadSession(string)
+        - Delete(string, string)
+        - Delete(string)
+        - FileExists(string)
+        - GetMeta(string)
+        - GetStruct()
+        - Log()
+        - IsConfigured()
+        - IsCompatible(string)
+        - GetFileName(string)
+        - GetMissionFileName(string)
+        - GetCustomName(string)
+        - GetCurrentCustomName()
+        - OnGameStart(string)
+        - OnGameEnd(string)
+        - OnLatestSave()
+        - InvokeOnSaved()
+        - InvokeOnSaveFailed()
+        - OnSaving(string)
+        - OnSaveSuccess(string)
+        - OnSaveFailed(string)
+        - OnLoaded(string)
+        - OnLoadFailed(string)
+        - OnDeleteSuccess(string)
+        - OnDeleteFailed(string)
+    }
+
+    class SCR_NumberedDSSessionCallback {
+        - GetFileName(string, string)
+    }
+
+    class SCR_DisposableDSSessionCallback {
+        - DeleteDelayed(string)
+        - DeleteIfNotToLoad(string)
+        - OnGameStart(string)
+        - OnGameEnd(string)
+    }
+
+    class SCR_DSSessionCallbackSessionStorage {
+        - m_OnInitialize
+        - GetOnInitialize()
+        - OnInitialize()
+    }
+
+    class SCR_MissionStruct {
+        - m_aStructs
+        - m_aStructTypes
+        - GetMeta()
+        - ContainsStruct(typename structType)
+        - Serialize()
+        - Deserialize()
+        - ClearCache()
+        - Log()
+        - SCR_MissionStruct()
+    }
+
+    class SCR_MetaStruct {
+        - bV
+        - cT
+        - hR
+        - sA
+        - ada
+        - IsVersionCompatible(out string)
+        - GetHeaderResource()
+        - GetScenarioAddon()
+        - GetDateAndTime(out int, out int, out int, out int, out int, out int)
+        - AreAddonsCompatible()
+        - IsValid()
+        - Serialize()
+        - Deserialize()
+        - ClearCache()
+        - Log()
+        - SCR_MetaStruct()
+    }
+
+    class SCR_JsonApiStruct {
+        - Serialize()
+        - Deserialize()
+        - ClearCache()
+        - Log()
+    }
+
+    class SCR_CreateNewSaveDialog {
+        - m_ConfirmPrompt
+        - Init(Widget, SCR_ConfigurableDialogUiPreset, MenuBase)
+        - OnConfirm()
+        - OnConfirmPrompt()
+        - SCR_CreateNewSaveDialog()
+    }
+
+    class SCR_SaveWorkshopManagerUI {
+        - DIALOGS_CONFIG
+        - PUBLISH_BUTTON_TOOLTIPS
+        - m_Instance
+        - m_CachedEditorSaveDialog
+        - m_PhotoModeEntity
+        - GetInstance()
+        - CreateDialog(string)
+        - CreateSaveDetailsInDialog(MissionWorkshopItem, ScriptInvokerBool)
+        - SetCachedEditSaveDialog(SCR_EditorSaveDialog)
+        - GetCachedEditSaveDialog()
+        - SetupSaveImageCaptureCallback()
+        - ClearSaveImageCaptureCallback()
+        - OnImageCapturePhotoModeDeactivate()
+    }
+
+    class ScriptedInventoryStorageManagerComponentClass {
+    }
+
+    class ScriptedInventoryStorageManagerComponent {
+        - m_OnItemAddedInvoker
+        - m_OnItemRemovedInvoker
+        - OnItemAdded(BaseInventoryStorageComponent, IEntity)
+        - OnItemRemoved(BaseInventoryStorageComponent, IEntity)
+    }
+    
+    class SCR_UniversalInventoryStorageComponentClass {
+    }
+
+    class SCR_UniversalInventoryStorageComponent {
+        - m_LinkedStorages
+        - m_Attributes
+        - m_fWeight
+        - pInventoryManager
+        - MIN_VOLUME_TO_SHOW_ITEM_IN_SLOT
+        - m_nNrOfNonRefundableItems
+        - GetMaxLoad()
+        - GetAttributeCollection(Entity)
+        - GetItemComponent(Entity)
+        - IsAdditionalWeightOk(float)
+        - CanStoreItem(Entity, int)
+        - CanStoreResource(ResourceName, int, int)
+        - CanReplaceItem(Entity, int)
+        - OnRemovedFromSlot(Entity, int)
+        - OnAddedToSlot(Entity, int)
+        - GetLinkedStorages(notnull out array<BaseInventoryStorageComponent>)
+        - AddLinkedStorage(BaseInventoryStorageComponent)
+        - IsStorageALinkedChild(notnull BaseInventoryStorageComponent)
+        - GetNonRefundableItemCount()
+        - SetNonRefundableItemCount(int)
+        - OnManagerChanged(InventoryStorageManagerComponent)
+    }
+
+    class SCR_LoadoutManagerClass {
+    }
+
+    class SCR_LoadoutManager {
+        - INVALID_LOADOUT_INDEX
+        - m_PreviousPlayerLoadouts
+        - m_ChangedLoadouts
+        - m_MappedPlayerLoadoutInfo
+        - m_PlayerCount
+        - m_OnMappedPlayerLoadoutInfoChanged
+        - GetPlayerLoadout(int)
+        - GetLocalPlayerLoadout()
+        - SGetLocalPlayerLoadout()
+        - GetLoadoutPlayerCount(SCR_BasePlayerLoadout)
+        - SGetLoadoutPlayerCount(SCR_BasePlayerLoadout)
+        - OnPlayerLoadoutInfoChanged()
+        - OnPlayerLoadoutSet_S(SCR_PlayerLoadoutComponent, SCR_BasePlayerLoadout)
+        - UpdatePlayerLoadout_S(SCR_PlayerLoadoutComponent)
+        - CanAssignLoadout_S(SCR_PlayerLoadoutComponent, SCR_BasePlayerLoadout)
+        - GetPlayerLoadouts()
+        - GetLoadoutCount()
+        - GetLoadoutIndex(SCR_BasePlayerLoadout)
+        - GetLoadoutByIndex(int)
+        - GetLoadoutByName(string)
+        - GetRandomFactionLoadout(Faction)
+        - GetPlayerLoadoutsByFaction(Faction, out notnull array<ref SCR_BasePlayerLoadout>)
+        - GetPlayerLoadouts(out notnull array<SCR_BasePlayerLoadout>)
+        - GetRandomLoadoutIndex(Faction)
+        - GetRandomLoadout()
+        - OnMappedPlayerLoadoutInfoChanged()
+        - SCR_LoadoutManager(EntitySource, IEntity)
+        - ~SCR_LoadoutManager()
+    }
+
+    class SCR_PlayerLoadout {
+        - m_sLoadoutName
+        - m_sLoadoutResource
+        - m_sLoadoutImage
+        - GetLoadoutResource()
+        - GetLoadoutImageResource()
+        - GetLoadoutName()
+    }
+
+    class SCR_FactionPlayerLoadout {
+        - m_sAffiliatedFaction
+        - GetFactionKey()
+        - OnLoadoutSpawned(GenericEntity, int)
+    }
+
+    SCR_LoadoutManagerClass <|-- SCR_LoadoutManager
+    SCR_UniversalInventoryStorageComponentClass <|-- SCR_UniversalInventoryStorageComponent
+    ScriptedInventoryStorageManagerComponentClass <|-- ScriptedInventoryStorageManagerComponent
+    SCR_SaveManagerCore o-- SCR_DSSessionCallback
+    SCR_DSSessionCallback <|-- SCR_NumberedDSSessionCallback
+    SCR_DSSessionCallback <|-- SCR_DisposableDSSessionCallback
+    SCR_SaveManagerCore o-- SCR_DSSessionCallbackSessionStorage
+    SCR_SaveLoadComponentClass <|-- SCR_SaveLoadComponent
