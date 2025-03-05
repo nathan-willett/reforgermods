@@ -7,6 +7,17 @@
 // ------                         Written by REAPER 2024 - www.reaper-as.de                                      ------
 // --------------------------------------------------------------------------------------------------------------------
 
+// This file modifies SCR_PlayerLoadoutData to store additional information about weapon attachments and character prefabs.
+// 
+// It defines two new classes:
+// 	-	SCR_WeaponAttachmentLoadoutData (stores the attachment slot index and prefab name).
+// 	-	SCR_WeaponAttachmentMuzzleLoadoutData (stores muzzle attachment data).
+// 
+// The Extract and Inject methods handle serialization and deserialization of these new properties, ensuring the correct 
+// loadout data is saved and loaded.
+// 
+// This file is crucial for managing stored loadouts, as it saves clothing, weapons, and attachments for a character.
+
 // Modded to store WeaponAttachments and Character into SCR_PlayerLoadoutData 
 
 class SCR_WeaponAttachmentLoadoutData

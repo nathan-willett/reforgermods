@@ -1,0 +1,25 @@
+classDiagram
+
+class SCR_WeaponAttachmentLoadoutData {
+    - SlotIdx: int
+    - AttachmentPrefab: ResourceName
+}
+
+class SCR_WeaponAttachmentMuzzleLoadoutData {
+    - SlotIdx: int
+    - AttachmentMuzzlePrefab: ResourceName
+}
+
+class SCR_PlayerLoadoutData {
+    - Attachments: array<ref SCR_WeaponAttachmentLoadoutData>
+    - AttachmentMuzzles: array<ref SCR_WeaponAttachmentMuzzleLoadoutData>
+    - characterPrefab: ResourceName
+
+    + Extract(SCR_PlayerLoadoutData, ScriptCtx, SSnapSerializerBase): bool
+    + Inject(SSnapSerializerBase, ScriptCtx, SCR_PlayerLoadoutData): bool
+    + Encode(SSnapSerializerBase, ScriptCtx, ScriptBitSerializer)
+    + Decode(ScriptBitSerializer, ScriptCtx, SSnapSerializerBase): bool
+}
+
+SCR_PlayerLoadoutData --* SCR_WeaponAttachmentLoadoutData
+SCR_PlayerLoadoutData --* SCR_WeaponAttachmentMuzzleLoadoutData

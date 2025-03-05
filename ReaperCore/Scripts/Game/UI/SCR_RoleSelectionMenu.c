@@ -7,6 +7,12 @@
 // ------                         Written by REAPER 2024 - www.reaper-as.de                                      ------
 // --------------------------------------------------------------------------------------------------------------------
 
+// This file modifies the SCR_RoleSelectionMenu class, primarily to set the background image of the deploy menu.
+// 
+// It selects the appropriate background image based on the screen’s aspect ratio.
+// 
+// While not directly related to loadouts, this file customizes the role selection menu to integrate with the REAPER CORE mod.
+
 modded class SCR_RoleSelectionMenu : SCR_DeployMenuBase
 {
 	protected ResourceName bgImage169 = "{844AEDDCAE56FBEC}UI/Textures/REAPER_DeployBG_169.edds";

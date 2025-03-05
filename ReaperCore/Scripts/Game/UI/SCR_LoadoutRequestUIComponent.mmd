@@ -1,0 +1,10 @@
+classDiagram
+
+class SCR_LoadoutRequestUIComponent {
+    + RequestPlayerLoadout(SCR_BasePlayerLoadout)
+    + RefreshLoadoutPreview()
+    + SetLoadoutPreview(SCR_BasePlayerLoadout)
+    - REAPER_SetCharIdent()
+}
+
+SCR_LoadoutRequestUIComponent --|> SCR_DeployRequestUIBaseComponent

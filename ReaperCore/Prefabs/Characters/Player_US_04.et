@@ -1,0 +1,60 @@
+SCR_ChimeraCharacter : "{836E7E39AAC5888B}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Base.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+      }
+      SCR_EquipmentStorageSlot WristwatchSlot {
+       Prefab "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et"
+      }
+     }
+    }
+   }
+   Attributes ItemAttributeCollection "{52BAC70D641B89B1}" {
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{5A5E681387647A43}" {
+     }
+    }
+   }
+  }
+  SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
+   Override 1
+   Identity Identity "{5584CBC6363C648B}" {
+    VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
+    }
+    Name "Rodman"
+    Alias "Scorpion"
+    Surname "Jamal"
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{C7CE66BDFF8E41B4}Prefabs/Character/HeadGear/Fleece_Hat_BK.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{CC2FB69ED804A7DB}Prefabs/Character/PoloShirt/poloshirt_OD.et"
+     Name "Shirt"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{1F2DC1AC9A17B345}Prefabs/Character/Jeans_01/Jeans_01_bright.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{217AC8E63E01908D}Prefabs/Character/Boots/hitops_worn_BK.et"
+    }
+    LoadoutSlotInfo Back {
+     Prefab ""
+    }
+    LoadoutSlotInfo Vest {
+    }
+    LoadoutSlotInfo REAPER_Goggles {
+    }
+    LoadoutSlotInfo REAPER_Gloves {
+    }
+   }
+  }
+ }
+}

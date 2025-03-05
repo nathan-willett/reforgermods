@@ -1,0 +1,63 @@
+SCR_ChimeraCharacter : "{836E7E39AAC5888B}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Base.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+      }
+      SCR_EquipmentStorageSlot WristwatchSlot {
+       Prefab "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et"
+      }
+     }
+    }
+   }
+   Attributes ItemAttributeCollection "{52BAC70D641B89B1}" {
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{5A5E681387647A43}" {
+     }
+    }
+   }
+  }
+  SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
+   Override 1
+   Identity Identity "{5584CBC6363C648B}" {
+    VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
+     Head "{BB90449192005AB8}Prefabs/Characters/Heads/Head_White_06.et"
+     Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
+    }
+    Name "McNeal"
+    Alias "Huntsman"
+    Surname "Brian"
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{06477E315AC1D80C}Prefabs/Character/HeadGear/Boonie_Hat_BK.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{C8C55BDFF61542AA}Prefabs/Character/Helikon_Patriot_Jacket/helikon_patriot_woodland.et"
+     Name "Shirt"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{49555AC81F8B52A9}Prefabs/Character/Jeans_01/Jeans_01_black.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{2B1DF9A1FC2BE2EC}Prefabs/Character/Boots/PampaHI_BK.et"
+    }
+    LoadoutSlotInfo Back {
+     Prefab ""
+    }
+    LoadoutSlotInfo Vest {
+    }
+    LoadoutSlotInfo REAPER_Goggles {
+     Prefab "{BC09CD8D76B9E11E}Prefabs/Character/HeadGear/ESS_rollbar_Goggles_BK.et"
+    }
+    LoadoutSlotInfo REAPER_Gloves {
+    }
+   }
+  }
+ }
+}

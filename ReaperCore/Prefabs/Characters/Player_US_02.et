@@ -1,0 +1,60 @@
+SCR_ChimeraCharacter : "{836E7E39AAC5888B}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Base.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+      }
+      SCR_EquipmentStorageSlot WristwatchSlot {
+       Prefab "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et"
+      }
+     }
+    }
+   }
+   Attributes ItemAttributeCollection "{52BAC70D641B89B1}" {
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{5A5E681387647A43}" {
+     }
+    }
+   }
+  }
+  SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
+   Override 1
+   Identity Identity "{5584CBC6363C648B}" {
+    VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
+     Head "{D7C470712EC4D596}Prefabs/Characters/Heads/Head_White_05.et"
+     Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
+    }
+    Name "Pelestov"
+    Alias "Shadow"
+    Surname "Jakob"
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{92E3E52760AB3B69}Prefabs/Character/HeadGear/BaseballCap_front_BK.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{B918B10FB7FD9D7C}Prefabs/Character/FlannelShirt/flannel_shirt_BK.et"
+     Name "Shirt"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{49555AC81F8B52A9}Prefabs/Character/Jeans_01/Jeans_01_black.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{217AC8E63E01908D}Prefabs/Character/Boots/hitops_worn_BK.et"
+    }
+    LoadoutSlotInfo Back {
+     Prefab ""
+    }
+    LoadoutSlotInfo Vest {
+    }
+    LoadoutSlotInfo REAPER_Gloves {
+    }
+   }
+  }
+ }
+}

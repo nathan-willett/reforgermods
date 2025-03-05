@@ -1,0 +1,64 @@
+classDiagram
+
+class REAPER_ItemLoadoutManagerClass
+
+class REAPER_ItemLoadoutManager {
+    - m_deleteOnSpawn: bool
+    - m_deleteOnlyOnFirstSpawn: bool
+    - m_dropOnDeath: bool
+    - m_dropOnDisconnect: bool
+    - m_MoveFromOcean: bool
+    - m_WithdrawGarbageSystem: bool
+    - m_PlaySoundWhileOnGround: bool
+    - m_SoundSignalName: string
+    - m_ShowIconWhileOnGround: bool
+    - m_IconToShowOnMap: ResourceName
+    - m_IconCaption: string
+    - m_IconLayout: ResourceName
+    - m_owner: IEntity
+    - m_GameMode: SCR_BaseGameMode
+    - m_itemComp: InventoryItemComponent
+    - m_rplComp: RplComponent
+    - m_MapEntity: SCR_MapEntity
+    - m_RootWidget: Widget
+    - m_MarkerWidget: Widget
+    - m_character: ChimeraCharacter
+    - m_controller: SCR_CharacterControllerComponent
+    - m_invStore: SCR_InventoryStorageManagerComponent
+    - m_vehDmgMgr: SCR_VehicleDamageManagerComponent
+    - m_characterIsPlayer: bool
+    - m_characterPlayerId: int
+    - m_newPosFound: bool
+    - m_newPos: vector
+    - m_entitySearchString: string
+    - m_ItemIsOnGround: bool
+    - m_ItemIsInVehicle: bool
+
+    + OnPostInit(IEntity)
+    + EOnInit(IEntity)
+    + OnParentSlotChanged(InventoryStorageSlot, InventoryStorageSlot)
+    + OnVehicleDamageStateChanged(EDamageState)
+    + OnDamageStateChanged(EDamageState)
+    + OnPlayerDeath(SCR_CharacterControllerComponent, IEntity, Instigator)
+    + OnPlayerDisconnect(int)
+    + OnDelete(IEntity)
+    + REAPER_GetItemIsOnGround(): bool
+    + REAPER_GetDeleteOnSpawn(): bool
+    + REAPER_GetDeleteOnFirstSpawn(): bool
+    + REAPER_DropOwnerToGround()
+    + REAPER_MoveOwnerFromOcean_S()
+    + Rpc_SetOwnerOrigin_BCAST(vector)
+    + REAPER_GetBeachPositionQuery(IEntity): bool
+    + REAPER_PlaySoundOnGround()
+    + REAPER_WithdrawGarbageSystem()
+    + OnMapOpen(MapConfiguration)
+    + OnMapPan(float, float, bool)
+    + OnMapPanEnd(float, float)
+    + OnMapClose(MapConfiguration)
+    + REAPER_UpdateMarkerPosition()
+    + RplSave(ScriptBitWriter): bool
+    + RplLoad(ScriptBitReader): bool
+    + OnRPLUpdated()
+}
+
+REAPER_ItemLoadoutManagerClass <|-- REAPER_ItemLoadoutManager

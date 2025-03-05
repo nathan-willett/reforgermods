@@ -1,0 +1,26 @@
+classDiagram
+
+class REAPER_AutoSaveLoadoutComponentClass {
+    <<abstract>> 
+}
+
+class REAPER_AutoSaveLoadoutComponent {
+    - m_saveLoadoutDelay: int
+    - m_playerId: int
+    - m_character: ChimeraCharacter
+    - m_controller: SCR_CharacterControllerComponent
+    - m_arsenalManager: SCR_ArsenalManagerComponent
+    - m_InventoryManager: SCR_InventoryStorageManagerComponent
+    + OnPostInit(IEntity)
+    + REAPER_SaveLoadoutDelayed()
+    + REAPER_RpcAsk_SetPlayerLoadout(int)
+    + OnDelete(IEntity)
+    + RemoveInvokedEvents()
+    + OnControlledByPlayer(IEntity, bool)
+    + REAPER_InvokeInventoryMgrDelayed()
+    + OnPlayerDeath()
+    + OnItemAddedListener(IEntity, notnull BaseInventoryStorageComponent)
+    + OnItemRemovedListener(IEntity, notnull BaseInventoryStorageComponent)
+}
+
+REAPER_AutoSaveLoadoutComponentClass <|-- REAPER_AutoSaveLoadoutComponent

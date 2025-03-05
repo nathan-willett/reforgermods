@@ -1,0 +1,70 @@
+SCR_ChimeraCharacter : "{836E7E39AAC5888B}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Base.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+      }
+      SCR_EquipmentStorageSlot WristwatchSlot {
+       Prefab "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et"
+      }
+     }
+    }
+   }
+   Attributes ItemAttributeCollection "{52BAC70D641B89B1}" {
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{5A5E681387647A43}" {
+     }
+    }
+   }
+  }
+  SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
+   Override 1
+   Identity Identity "{5584CBC6363C648B}" {
+    VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
+     Head "{D7C470712EC4D596}Prefabs/Characters/Heads/Head_White_05.et"
+     Body "{0023F898C0FF18AA}Prefabs/Characters/Basebody/CharacterBasebody.et"
+    }
+    Name "Willis"
+    Alias "Badger"
+    Surname "Klay"
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{9D1CFC18461EF070}Prefabs/Character/HeadGear/Fleece_Hat_FDE.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{57A388CC75397830}Prefabs/Character/Helikon_Patriot_Jacket/helikon_patriot_brown.et"
+     Name "Shirt"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{1F2DC1AC9A17B345}Prefabs/Character/Jeans_01/Jeans_01_bright.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{DCF8AE356DDE19CB}Prefabs/Character/Boots/HiKing_Boots.et"
+    }
+    LoadoutSlotInfo Back {
+     Prefab ""
+    }
+    LoadoutSlotInfo Vest {
+    }
+    LoadoutSlotInfo REAPER_Goggles {
+    }
+    LoadoutSlotInfo REAPER_Gloves {
+    }
+    LoadoutSlotInfo Beard {
+     Offset -0.001 0.004 -0.006
+     Prefab "{2246687EFCCD91E0}Prefabs/Characters/Heads/Beard2_BR.et"
+     DisablePhysicsInteraction 1
+     InheritParentSkeleton 1
+     AreaType REAPER_LoadoutAlphatestArea "{61B7390F3B685183}" {
+     }
+    }
+   }
+  }
+ }
+}
