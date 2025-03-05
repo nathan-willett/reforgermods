@@ -1,0 +1,3407 @@
+classDiagram
+
+    class SCR_ItemOfInterestAttribute {
+        - m_InterestType: ECommonItemType
+        - m_InterestType: return
+        + GetInterestType() ECommonItemType
+    }
+
+    class ScriptedBaseInventoryStorageComponentClass {
+    }
+
+    class ScriptedBaseInventoryStorageComponent {
+    }
+
+    class ScriptedInventoryStorageManagerComponentClass {
+    }
+
+    class ScriptedInventoryStorageManagerComponent {
+    }
+
+    class SCR_AlternativeModel {
+        - m_sAlternativeModel: return
+        + GetAlternativeModel() ResourceName
+    }
+
+    class SCR_BaseInventoryItemComponentClass {
+    }
+
+    class SCR_BaseInventoryItemComponent {
+    }
+
+    class SCR_CharacterInventoryPreviewAttributes {
+    }
+
+    class SCR_CharacterInventoryStorageComponentClass {
+        - m_Controller: CharacterControllerComponent
+        - m_InvMan: SCR_InventoryStorageManagerComponent
+        - m_fMaxWeight: return
+        - m_WeaponStorage: return
+        - null: return
+        - null: return
+        - pUniComp: SCR_UniversalInventoryStorageComponent
+        - null: return
+        - m_LootStorage: return
+        - iItemType: return
+        - result: return
+        - i: return
+        - false: return
+        - false: return
+        - parentSlot: InventoryStorageSlot
+        - iSlotIndex: return
+        - iSlotIndex: return
+        - index: return
+        - m_aQuickSlots: return
+        - entityContainer: SCR_QuickslotEntityContainer
+        - entities: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - gadget: return
+        - null: return
+        - itemEnt: IEntity
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - currentWeapon: BaseWeaponComponent
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - turretWeapon: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - nextWeapon: return
+        - currentWeapon: IEntity
+        - item: IEntity
+        - item: return
+        - item: IEntity
+        - item: return
+        - null: return
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - index: return
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( LoadoutAreaType eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( LoadoutAreaType eSlot ) BaseInventoryStorageComponent
+        + GetStorageComponentFromEntity( pEntity ) return
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetBlockedSlots(out notnull array<typename> blockedSlots) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+        + GetIsStorageShown( notnull BaseInventoryStorageComponent pStorage ) bool
+        + SetStorageAsShown( notnull BaseInventoryStorageComponent pStorage ) void
+        + SetStorageAsHidden( notnull BaseInventoryStorageComponent pStorage ) void
+        + ItemBelongsToSlot( int iItemType, int iSlotIndex ) bool
+        + GetLastQuickSlotId(IEntity ent) int
+        + IsInDefaultQuickSlot(notnull IEntity item) bool
+        + GetEntityIndexInQuickslots(item) return
+        + StoreItemToQuickSlot(notnull IEntity pItem, int iSlotIndex = -1, bool isForced = false) int
+        + InsertContainerIntoQuickslot(SCR_QuickslotBaseContainer container, int slotIndex) void
+        + RemoveItemFromQuickSlot( IEntity pItem ) int
+        + RemoveItemFromQuickSlotAtIndex(int index) void
+        + GetItemFromQuickSlot(int index) IEntity
+        + GetContainerFromQuickslot(int index) SCR_QuickslotBaseContainer
+        + GetCurrentItem() IEntity
+        + GetSelectedItem() IEntity
+        + GetCurrentItem() return
+        + UnequipCurrentItem() void
+        + DropCurrentItem() void
+        + IsAreaBlocked(typename areaType) bool
+        + HandleOnItemAddedToInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + HandleOnItemRemovedFromInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + CanEquipItem_Inventory(notnull IEntity item) bool
+        + CanUseItem(item) return
+        + CanUseItem_Inventory(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + CanUseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + UseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC, SCR_EUseContext context = SCR_EUseContext.FROM_QUICKSLOT) bool
+        + ReloadCurrentWeapon(item) return
+        + GetCurrentTurretWeapon() return
+        + GetCurrentCharacterWeapon() return
+        + SelectNextWeapon(int maxSlot = -1) IEntity
+        + GetNextWeapon(int maxSlots = -1) IEntity
+        + InitAsPlayer(IEntity pOwner, bool pControlled) void
+        + GetEntityIndexInQuickslots(notnull IEntity entity) int
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( ELoadoutArea eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( ELoadoutArea eSlot ) BaseInventoryStorageComponent
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+    }
+
+    class SCR_InvEquipCB {
+        - m_Controller: CharacterControllerComponent
+        - m_InvMan: SCR_InventoryStorageManagerComponent
+        - m_fMaxWeight: return
+        - m_WeaponStorage: return
+        - null: return
+        - null: return
+        - pUniComp: SCR_UniversalInventoryStorageComponent
+        - null: return
+        - m_LootStorage: return
+        - iItemType: return
+        - result: return
+        - i: return
+        - false: return
+        - false: return
+        - parentSlot: InventoryStorageSlot
+        - iSlotIndex: return
+        - iSlotIndex: return
+        - index: return
+        - m_aQuickSlots: return
+        - entityContainer: SCR_QuickslotEntityContainer
+        - entities: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - gadget: return
+        - null: return
+        - itemEnt: IEntity
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - currentWeapon: BaseWeaponComponent
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - turretWeapon: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - nextWeapon: return
+        - currentWeapon: IEntity
+        - item: IEntity
+        - item: return
+        - item: IEntity
+        - item: return
+        - null: return
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - index: return
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( LoadoutAreaType eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( LoadoutAreaType eSlot ) BaseInventoryStorageComponent
+        + GetStorageComponentFromEntity( pEntity ) return
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetBlockedSlots(out notnull array<typename> blockedSlots) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+        + GetIsStorageShown( notnull BaseInventoryStorageComponent pStorage ) bool
+        + SetStorageAsShown( notnull BaseInventoryStorageComponent pStorage ) void
+        + SetStorageAsHidden( notnull BaseInventoryStorageComponent pStorage ) void
+        + ItemBelongsToSlot( int iItemType, int iSlotIndex ) bool
+        + GetLastQuickSlotId(IEntity ent) int
+        + IsInDefaultQuickSlot(notnull IEntity item) bool
+        + GetEntityIndexInQuickslots(item) return
+        + StoreItemToQuickSlot(notnull IEntity pItem, int iSlotIndex = -1, bool isForced = false) int
+        + InsertContainerIntoQuickslot(SCR_QuickslotBaseContainer container, int slotIndex) void
+        + RemoveItemFromQuickSlot( IEntity pItem ) int
+        + RemoveItemFromQuickSlotAtIndex(int index) void
+        + GetItemFromQuickSlot(int index) IEntity
+        + GetContainerFromQuickslot(int index) SCR_QuickslotBaseContainer
+        + GetCurrentItem() IEntity
+        + GetSelectedItem() IEntity
+        + GetCurrentItem() return
+        + UnequipCurrentItem() void
+        + DropCurrentItem() void
+        + IsAreaBlocked(typename areaType) bool
+        + HandleOnItemAddedToInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + HandleOnItemRemovedFromInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + CanEquipItem_Inventory(notnull IEntity item) bool
+        + CanUseItem(item) return
+        + CanUseItem_Inventory(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + CanUseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + UseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC, SCR_EUseContext context = SCR_EUseContext.FROM_QUICKSLOT) bool
+        + ReloadCurrentWeapon(item) return
+        + GetCurrentTurretWeapon() return
+        + GetCurrentCharacterWeapon() return
+        + SelectNextWeapon(int maxSlot = -1) IEntity
+        + GetNextWeapon(int maxSlots = -1) IEntity
+        + InitAsPlayer(IEntity pOwner, bool pControlled) void
+        + GetEntityIndexInQuickslots(notnull IEntity entity) int
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( ELoadoutArea eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( ELoadoutArea eSlot ) BaseInventoryStorageComponent
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+    }
+
+    class SCR_EquipNextGrenadeCB {
+        - m_InvMan: SCR_InventoryStorageManagerComponent
+        - m_fMaxWeight: return
+        - m_WeaponStorage: return
+        - null: return
+        - null: return
+        - pUniComp: SCR_UniversalInventoryStorageComponent
+        - null: return
+        - m_LootStorage: return
+        - iItemType: return
+        - result: return
+        - i: return
+        - false: return
+        - false: return
+        - parentSlot: InventoryStorageSlot
+        - iSlotIndex: return
+        - iSlotIndex: return
+        - index: return
+        - m_aQuickSlots: return
+        - entityContainer: SCR_QuickslotEntityContainer
+        - entities: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - gadget: return
+        - null: return
+        - itemEnt: IEntity
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - currentWeapon: BaseWeaponComponent
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - turretWeapon: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - nextWeapon: return
+        - currentWeapon: IEntity
+        - item: IEntity
+        - item: return
+        - item: IEntity
+        - item: return
+        - null: return
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - index: return
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( LoadoutAreaType eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( LoadoutAreaType eSlot ) BaseInventoryStorageComponent
+        + GetStorageComponentFromEntity( pEntity ) return
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetBlockedSlots(out notnull array<typename> blockedSlots) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+        + GetIsStorageShown( notnull BaseInventoryStorageComponent pStorage ) bool
+        + SetStorageAsShown( notnull BaseInventoryStorageComponent pStorage ) void
+        + SetStorageAsHidden( notnull BaseInventoryStorageComponent pStorage ) void
+        + ItemBelongsToSlot( int iItemType, int iSlotIndex ) bool
+        + GetLastQuickSlotId(IEntity ent) int
+        + IsInDefaultQuickSlot(notnull IEntity item) bool
+        + GetEntityIndexInQuickslots(item) return
+        + StoreItemToQuickSlot(notnull IEntity pItem, int iSlotIndex = -1, bool isForced = false) int
+        + InsertContainerIntoQuickslot(SCR_QuickslotBaseContainer container, int slotIndex) void
+        + RemoveItemFromQuickSlot( IEntity pItem ) int
+        + RemoveItemFromQuickSlotAtIndex(int index) void
+        + GetItemFromQuickSlot(int index) IEntity
+        + GetContainerFromQuickslot(int index) SCR_QuickslotBaseContainer
+        + GetCurrentItem() IEntity
+        + GetSelectedItem() IEntity
+        + GetCurrentItem() return
+        + UnequipCurrentItem() void
+        + DropCurrentItem() void
+        + IsAreaBlocked(typename areaType) bool
+        + HandleOnItemAddedToInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + HandleOnItemRemovedFromInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + CanEquipItem_Inventory(notnull IEntity item) bool
+        + CanUseItem(item) return
+        + CanUseItem_Inventory(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + CanUseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + UseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC, SCR_EUseContext context = SCR_EUseContext.FROM_QUICKSLOT) bool
+        + ReloadCurrentWeapon(item) return
+        + GetCurrentTurretWeapon() return
+        + GetCurrentCharacterWeapon() return
+        + SelectNextWeapon(int maxSlot = -1) IEntity
+        + GetNextWeapon(int maxSlots = -1) IEntity
+        + InitAsPlayer(IEntity pOwner, bool pControlled) void
+        + GetEntityIndexInQuickslots(notnull IEntity entity) int
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( ELoadoutArea eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( ELoadoutArea eSlot ) BaseInventoryStorageComponent
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+    }
+
+    class SCR_EquipGearCB {
+        - m_fMaxWeight: return
+        - m_WeaponStorage: return
+        - null: return
+        - null: return
+        - pUniComp: SCR_UniversalInventoryStorageComponent
+        - null: return
+        - m_LootStorage: return
+        - iItemType: return
+        - result: return
+        - i: return
+        - false: return
+        - false: return
+        - parentSlot: InventoryStorageSlot
+        - iSlotIndex: return
+        - iSlotIndex: return
+        - index: return
+        - m_aQuickSlots: return
+        - entityContainer: SCR_QuickslotEntityContainer
+        - entities: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - gadget: return
+        - null: return
+        - itemEnt: IEntity
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - currentWeapon: BaseWeaponComponent
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - turretWeapon: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - nextWeapon: return
+        - currentWeapon: IEntity
+        - item: IEntity
+        - item: return
+        - item: IEntity
+        - item: return
+        - null: return
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - index: return
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( LoadoutAreaType eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( LoadoutAreaType eSlot ) BaseInventoryStorageComponent
+        + GetStorageComponentFromEntity( pEntity ) return
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetBlockedSlots(out notnull array<typename> blockedSlots) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+        + GetIsStorageShown( notnull BaseInventoryStorageComponent pStorage ) bool
+        + SetStorageAsShown( notnull BaseInventoryStorageComponent pStorage ) void
+        + SetStorageAsHidden( notnull BaseInventoryStorageComponent pStorage ) void
+        + ItemBelongsToSlot( int iItemType, int iSlotIndex ) bool
+        + GetLastQuickSlotId(IEntity ent) int
+        + IsInDefaultQuickSlot(notnull IEntity item) bool
+        + GetEntityIndexInQuickslots(item) return
+        + StoreItemToQuickSlot(notnull IEntity pItem, int iSlotIndex = -1, bool isForced = false) int
+        + InsertContainerIntoQuickslot(SCR_QuickslotBaseContainer container, int slotIndex) void
+        + RemoveItemFromQuickSlot( IEntity pItem ) int
+        + RemoveItemFromQuickSlotAtIndex(int index) void
+        + GetItemFromQuickSlot(int index) IEntity
+        + GetContainerFromQuickslot(int index) SCR_QuickslotBaseContainer
+        + GetCurrentItem() IEntity
+        + GetSelectedItem() IEntity
+        + GetCurrentItem() return
+        + UnequipCurrentItem() void
+        + DropCurrentItem() void
+        + IsAreaBlocked(typename areaType) bool
+        + HandleOnItemAddedToInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + HandleOnItemRemovedFromInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + CanEquipItem_Inventory(notnull IEntity item) bool
+        + CanUseItem(item) return
+        + CanUseItem_Inventory(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + CanUseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + UseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC, SCR_EUseContext context = SCR_EUseContext.FROM_QUICKSLOT) bool
+        + ReloadCurrentWeapon(item) return
+        + GetCurrentTurretWeapon() return
+        + GetCurrentCharacterWeapon() return
+        + SelectNextWeapon(int maxSlot = -1) IEntity
+        + GetNextWeapon(int maxSlots = -1) IEntity
+        + InitAsPlayer(IEntity pOwner, bool pControlled) void
+        + GetEntityIndexInQuickslots(notnull IEntity entity) int
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( ELoadoutArea eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( ELoadoutArea eSlot ) BaseInventoryStorageComponent
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+    }
+
+    class SCR_CharacterInventoryStorageComponent {
+        - m_fMaxWeight: return
+        - m_WeaponStorage: return
+        - null: return
+        - null: return
+        - pUniComp: SCR_UniversalInventoryStorageComponent
+        - null: return
+        - m_LootStorage: return
+        - iItemType: return
+        - result: return
+        - i: return
+        - false: return
+        - false: return
+        - parentSlot: InventoryStorageSlot
+        - iSlotIndex: return
+        - iSlotIndex: return
+        - index: return
+        - m_aQuickSlots: return
+        - entityContainer: SCR_QuickslotEntityContainer
+        - entities: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - gadget: return
+        - null: return
+        - itemEnt: IEntity
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - currentWeapon: BaseWeaponComponent
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - turretWeapon: return
+        - null: return
+        - null: return
+        - null: return
+        - null: return
+        - nextWeapon: return
+        - currentWeapon: IEntity
+        - item: IEntity
+        - item: return
+        - item: IEntity
+        - item: return
+        - null: return
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - quickSlotEntity: IEntity
+        - entityContainer: SCR_QuickslotEntityContainer
+        - index: return
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( LoadoutAreaType eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( LoadoutAreaType eSlot ) BaseInventoryStorageComponent
+        + GetStorageComponentFromEntity( pEntity ) return
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetBlockedSlots(out notnull array<typename> blockedSlots) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+        + GetIsStorageShown( notnull BaseInventoryStorageComponent pStorage ) bool
+        + SetStorageAsShown( notnull BaseInventoryStorageComponent pStorage ) void
+        + SetStorageAsHidden( notnull BaseInventoryStorageComponent pStorage ) void
+        + ItemBelongsToSlot( int iItemType, int iSlotIndex ) bool
+        + GetLastQuickSlotId(IEntity ent) int
+        + IsInDefaultQuickSlot(notnull IEntity item) bool
+        + GetEntityIndexInQuickslots(item) return
+        + StoreItemToQuickSlot(notnull IEntity pItem, int iSlotIndex = -1, bool isForced = false) int
+        + InsertContainerIntoQuickslot(SCR_QuickslotBaseContainer container, int slotIndex) void
+        + RemoveItemFromQuickSlot( IEntity pItem ) int
+        + RemoveItemFromQuickSlotAtIndex(int index) void
+        + GetItemFromQuickSlot(int index) IEntity
+        + GetContainerFromQuickslot(int index) SCR_QuickslotBaseContainer
+        + GetCurrentItem() IEntity
+        + GetSelectedItem() IEntity
+        + GetCurrentItem() return
+        + UnequipCurrentItem() void
+        + DropCurrentItem() void
+        + IsAreaBlocked(typename areaType) bool
+        + HandleOnItemAddedToInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + HandleOnItemRemovedFromInventory( IEntity item, BaseInventoryStorageComponent storageOwner ) void
+        + CanEquipItem_Inventory(notnull IEntity item) bool
+        + CanUseItem(item) return
+        + CanUseItem_Inventory(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + CanUseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC) bool
+        + CanReloadCurrentWeapon(item) return
+        + UseItem(notnull IEntity item, ESlotFunction slotFunction = ESlotFunction.TYPE_GENERIC, SCR_EUseContext context = SCR_EUseContext.FROM_QUICKSLOT) bool
+        + ReloadCurrentWeapon(item) return
+        + GetCurrentTurretWeapon() return
+        + GetCurrentCharacterWeapon() return
+        + SelectNextWeapon(int maxSlot = -1) IEntity
+        + GetNextWeapon(int maxSlots = -1) IEntity
+        + InitAsPlayer(IEntity pOwner, bool pControlled) void
+        + GetEntityIndexInQuickslots(notnull IEntity entity) int
+        + GetMaxLoad() float
+        + GetWeaponStorage() BaseInventoryStorageComponent
+        + GetItemFromLoadoutSlot( ELoadoutArea eSlot ) InventoryItemComponent
+        + GetStorageFromLoadoutSlot( ELoadoutArea eSlot ) BaseInventoryStorageComponent
+        + GetStorages( out notnull array<SCR_UniversalInventoryStorageComponent> storagesInInventory ) void
+        + GetStorageComponentFromEntity( IEntity pEntity ) SCR_UniversalInventoryStorageComponent
+        + SetLootStorage( IEntity pOwner ) void
+        + GetLootStorage() BaseInventoryStorageComponent
+    }
+
+    class SCR_FuelInventoryItemComponentClass {
+        + SCR_FuelInventoryItemComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_FuelInventoryItemComponent {
+        + SCR_FuelInventoryItemComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_InventoryStorageManagerComponentClass {
+        - wanted: ECommonItemType
+        - characterEntity: IEntity
+        - hitZoneGroup: ECharacterHitZoneGroup
+        - false: return
+        - false: return
+        - m_iOriginalItem: IEntity
+        - m_OriginalItem: IEntity
+        - false: return
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_HoldableItemPredicate() void
+        + SCR_BandagePredicate() void
+        + SCR_ApplicableMedicalItemPredicate() void
+        + SCR_ItemTypeSearchPredicate(typename type, int wantedItemType, IEntity originalItem) void
+        + SCR_CommonItemTypeSearchPredicate(ECommonItemType wantedItemType, IEntity originalItem) void
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_HoldableItemPredicate {
+        - wanted: ECommonItemType
+        - characterEntity: IEntity
+        - hitZoneGroup: ECharacterHitZoneGroup
+        - false: return
+        - false: return
+        - m_iOriginalItem: IEntity
+        - m_OriginalItem: IEntity
+        - false: return
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_HoldableItemPredicate() void
+        + SCR_BandagePredicate() void
+        + SCR_ApplicableMedicalItemPredicate() void
+        + SCR_ItemTypeSearchPredicate(typename type, int wantedItemType, IEntity originalItem) void
+        + SCR_CommonItemTypeSearchPredicate(ECommonItemType wantedItemType, IEntity originalItem) void
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_BandagePredicate {
+        - characterEntity: IEntity
+        - hitZoneGroup: ECharacterHitZoneGroup
+        - false: return
+        - false: return
+        - m_iOriginalItem: IEntity
+        - m_OriginalItem: IEntity
+        - false: return
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_BandagePredicate() void
+        + SCR_ApplicableMedicalItemPredicate() void
+        + SCR_ItemTypeSearchPredicate(typename type, int wantedItemType, IEntity originalItem) void
+        + SCR_CommonItemTypeSearchPredicate(ECommonItemType wantedItemType, IEntity originalItem) void
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_ApplicableMedicalItemPredicate {
+        - characterEntity: IEntity
+        - hitZoneGroup: ECharacterHitZoneGroup
+        - false: return
+        - false: return
+        - m_iOriginalItem: IEntity
+        - m_OriginalItem: IEntity
+        - false: return
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_ApplicableMedicalItemPredicate() void
+        + SCR_ItemTypeSearchPredicate(typename type, int wantedItemType, IEntity originalItem) void
+        + SCR_CommonItemTypeSearchPredicate(ECommonItemType wantedItemType, IEntity originalItem) void
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_ItemTypeSearchPredicate {
+        - m_iOriginalItem: IEntity
+        - m_OriginalItem: IEntity
+        - false: return
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_ItemTypeSearchPredicate(typename type, int wantedItemType, IEntity originalItem) void
+        + SCR_CommonItemTypeSearchPredicate(ECommonItemType wantedItemType, IEntity originalItem) void
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_CommonItemTypeSearchPredicate {
+        - m_OriginalItem: IEntity
+        - false: return
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_CommonItemTypeSearchPredicate(ECommonItemType wantedItemType, IEntity originalItem) void
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_CompatibleAttachmentPredicate {
+        - attachmentType: typename
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_CompatibleAttachmentPredicate() void
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_SalinePredicate {
+        - true: return
+        - false: return
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_SalinePredicate() void
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_MagazinePredicate {
+        - magWellType: typename
+        - false: return
+        - false: return
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + SCR_MagazinePredicate() void
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_PrefabNamePredicate {
+        - prefabName: string
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_PrefabDataPredicate {
+        - prefabData: EntityPrefabData
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class DropAndMoveOperationCallback {
+        - m_ItemBefore: InventoryItemComponent
+        - m_ItemAfter: InventoryItemComponent
+        - m_TargetSlot: InventoryStorageSlot
+        - m_Manager: SCR_InventoryStorageManagerComponent
+        - m_FinalCB: SCR_InvCallBack
+        - m_bIstakenFromArsenal: bool
+        - m_bDeleteItemIfEmpty: bool
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_ResupplyMagazinesCallback {
+        - currentCount: int
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + Insert(ResourceName prefab, int count) void
+        + Start() void
+        + SCR_ResupplyMagazinesCallback(SCR_InventoryStorageManagerComponent manager) void
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_InventoryStorageManagerComponent {
+        - false: return
+        - true: return
+        - false: return
+        - m_Storage: return
+        - false: return
+        - true: return
+        - false: return
+        - actualStorage: return
+        - null: return
+        - m_ERetCode: return
+        - fTotalWeight: return
+        - false: return
+        - false: return
+        - result: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - lootedBodyDamageManager: DamageManagerComponent
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - magazineOrProjectilePrefab: ResourceName
+        - spawnedMagazine: IEntity
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - false: return
+        - comp: BaseWeaponComponent
+        - inMagMuzzle: SCR_MuzzleInMagComponent
+        - arsenalStorage: SCR_ArsenalInventoryStorageManagerComponent
+        - m_ResupplyMagazineCallback: delete
+        - result: return
+        - pInvComp: InventoryItemComponent
+        - attribs: ItemAttributeCollection
+        - m_iHealthEquipment: return
+        - true: return
+        - m_bIsInventoryLocked: return
+        - 0: return
+        - count: return
+        - weapon: BaseWeaponComponent
+        - prefabData: EntityPrefabData
+        - currentPrefab: EntityPrefabData
+        - currentWeapon: BaseWeaponComponent
+        - null: return
+        - null: return
+        - item: return
+        - null: return
+        - m_ERetCode: return
+        + GetAllRootItems(out notnull array<IEntity> rootItems) int
+        + PlayItemSound(IEntity entity, string soundEvent) void
+        + RpcAsk_PlaySound(RplId targetRplId, string soundAction) void
+        + RpcDo_PlaySound(RplId targetRplId, string soundAction) void
+        + GetCharacterStorage() SCR_CharacterInventoryStorageComponent
+        + CanInsertItemInActualStorage(IEntity item, BaseInventoryStorageComponent storage, int slotID = -1) bool
+        + FindActualStorageForItemResource(ResourceName itemResource, BaseInventoryStorageComponent storage, int slotID = -1, int count = 1) BaseInventoryStorageComponent
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem, BaseInventoryStorageComponent pStorageTo = null, BaseInventoryStorageComponent pStorageFrom = null, SCR_InvCallBack cb = null  ) void
+        + TryRemoveItemFromInventory(IEntity pItem, BaseInventoryStorageComponent storage = null, InventoryOperationCallback cb = null) bool
+        + CanMoveItem(IEntity item) bool
+        + TrySwapItems( IEntity pOwnerEntity, BaseInventoryStorageComponent pStorageTo, SCR_InvCallBack cb = null ) bool
+        + TryMoveItemToStorage( pOwnerEntity, pStorageTo, slot.GetID() return
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipWeaponAttachment( IEntity pOwnerEntity, IEntity pUserEntity, SCR_InvCallBack cb = null ) void
+        + EquipGadget( IEntity pOwnerEntity, SCR_InvCallBack cb = null ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = -1, SCR_InvCallBack cb = null) bool
+        + TryReplaceItem(item, storage, preferred, cb) return
+        + TryInsertItemInStorage(item, storage, preferred, cb) return
+        + TryMoveItemToStorage(item, storage, preferred, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TrySwapItemStorages(item, m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceAndDropItemAtSlot(BaseInventoryStorageComponent storage, IEntity item, int slotID, SCR_InvCallBack cb = null, bool isTakenFromArsenal = false, bool deleteOriginalItemIfEmpty = false) bool
+        + TryReplaceItem(item, storage, slotID, cb) return
+        + TryInsertItemInStorage(item, storage, slotID, cb) return
+        + TryMoveItemToStorage(item, storage, slotID, cb) return
+        + TryRemoveItemFromStorage(m_TargetSlot.GetAttachedEntity() return
+        + TryReplaceItem( BaseInventoryStorageComponent storage, IEntity item, int preferred, SCR_InvCallBack cb ) bool
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + IsResupplyMagazinesAvailable(int resupplyMagazineCount = 4, out EResupplyUnavailableReason resupplyUnavailableReason = EResupplyUnavailableReason.NONE, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) bool
+        + GetValidResupplyItemsAndCount(out notnull map<ResourceName, int> validResupplyItems, int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + ResupplyMagazines(notnull map<ResourceName, int> validResupplyItems) void
+        + ResupplyMagazines(int maxMagazineCount = 4, EMuzzleType muzzleType = -1, InventoryStorageManagerComponent mustBeInStorage = null) void
+        + EndResupplyMagazines() void
+        + CanResupplyMuzzle(IEntity user, notnull BaseMuzzleComponent muzzle, int maxMagazineCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentMagazineAmount = -1) EResupplyUnavailableReason
+        + CanResupplyItem(IEntity user, ResourceName itemToResupply, int maxItemCount = -1, InventoryStorageManagerComponent mustBeInStorage = null, out int currentItemAmount = -1) EResupplyUnavailableReason
+        + MoveItemToVicinity(IEntity pItem, BaseInventoryStorageComponent pStorageTo = null) void
+        + OpenInventory() void
+        + CloseInventory() void
+        + GetStorageToOpen() IEntity
+        + SetStorageToOpen(IEntity storage) void
+        + Action_OpenInventory() void
+        + OnInventoryMenuClosed() void
+        + DebugListAllItemsInInventory() void
+        + AskServerToDeleteEntity(IEntity ent) void
+        + EnablePostFrame(bool enable) void
+        + ClearEventMask(GetOwner() else
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + FindItem(m_BandagePredicate, EStoragePurpose.PURPOSE_DEPOSIT) return
+        + IsAnimationReady() bool
+        + IsInventoryLocked() bool
+        + SetInventoryLocked(bool isLocked) void
+        + GetAllItems(inout array<IEntity> items, BaseInventoryStorageComponent storage) int
+        + GetWeaponPrefabsOfType(notnull array<IEntity> weapons, EWeaponType weaponType, notnull out array<EntityPrefabData> prefabs) void
+        + FindNextWeaponOfType(EWeaponType weaponType, IEntity currentItem = null, bool allowCurrentPrefab = false) IEntity
+        + SetReturnCode( EInventoryRetCode ERetCode ) void
+        + SetReturnCodeDefault() void
+        + GetReturnCode() EInventoryRetCode
+        + GetTotalWeightOfAllStorages() float
+        + SetLootStorage( IEntity pOwner ) void
+        + InsertItem( IEntity pItem ) void
+        + EquipWeapon( IEntity pOwnerEntity, SCR_InvCallBack cb = null, bool bFromVicinity = true ) void
+        + EquipGadget( IEntity pOwnerEntity ) void
+        + EquipCloth( IEntity pOwnerEntity ) void
+        + EquipAny(BaseInventoryStorageComponent storage, IEntity item, int preferred = 0) void
+        + EquipItem( EquipedWeaponStorageComponent weaponStorage, IEntity weapon ) void
+        + OpenInventory() void
+        + Action_OpenInventory() void
+        + EnablePostFrame(bool enable) void
+        + GetHealthComponentCount() int
+        + GetBandageItem() IEntity
+        + SCR_InventoryStorageManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+
+    class SCR_InventoryVehicleVisibilityAttribute {
+        - m_bShowInVehicleOnly: return
+        - m_bShowForVehicleFactionOnly: return
+        + GetVisibleInVehicleOnly() bool
+        + GetVisibleForVehicleFactionOnly() bool
+    }
+
+    class SCR_ItemAttributeCollection {
+        - m_bDraggable: return
+        - m_bVisible: return
+        - m_bStackable: return
+        - m_bRefundable: return
+        - iRetVal: return
+        - m_Size: return
+        - m_eQuickSlotSize: return
+        + GetVolume() float
+        + GetWeight() float
+        + IsDraggable() bool
+        + IsVisible() bool
+        + IsStackable() bool
+        + IsRefundable() bool
+        + SetSlotSize( ESlotSize slotSize ) void
+        + SetDraggable(bool isDraggable) void
+        + SetRefundable(bool isRefundable) void
+        + SetSlotType( ESlotID slotID ) void
+        + GetSlotType() ESlotID
+        + GetSlotSum() int
+        + GetItemSize() ESlotSize
+        + GetQuickSlotItemSize() ESlotSize
+        + GetItemSize() return
+    }
+
+    class SCR_Matrix {
+        - retVal: return
+        - retVal: return
+        - retVal: return
+        + Debug() void
+        + GetElement( int col, int row ) int
+        + SetElement( int col, int row, int value ) void
+        + InsertRow( SCR_MatrixRow row ) void
+        + Reset() void
+        + SCR_Matrix( int cols, int rows ) void
+    }
+
+    class SCR_MatrixRow {
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - i: return
+        + CheckFreePlaceInRow( int sizeCols, int col ) bool
+        + ReservePlaceInRow( int sizeCols, int col ) bool
+        + ClearPlaceInRow( int sizeCols, int col ) bool
+        + Debug() void
+        + GetElement( int index ) int
+        + InsertElement( int element ) void
+        + SetElement( int index, int element ) void
+        + SCR_Array( out notnull array<int> from ) void
+        + SCR_MatrixRow( int size, int defaulElementValue = 0 ) void
+    }
+
+    class SCR_QuickslotBaseContainer {
+        - m_Entity: return
+        - false: return
+        - true: return
+        - m_sCommandName: return
+        + ActivateContainer() void
+        + HandleVisualization(ImageWidget iconImage, RenderTargetWidget renderTarget, RichTextWidget text, TextWidget quickslotNumber) void
+        + IsQuickslotActionAvailable() bool
+        + SetEntity(IEntity entity) void
+        + GetEntity() IEntity
+        + SCR_QuickslotEntityContainer(IEntity entity) void
+        + ActivateContainer(SCR_InventorySlotUI slotUI, ChimeraCharacter playerCharacter) void
+        + SetCommandName(string name) void
+        + GetCommandName() string
+        + SCR_QuickslotCommandContainer(string name) void
+    }
+
+    class SCR_QuickslotEntityContainer {
+        - m_Entity: return
+        - false: return
+        - true: return
+        - m_sCommandName: return
+        + SetEntity(IEntity entity) void
+        + GetEntity() IEntity
+        + SCR_QuickslotEntityContainer(IEntity entity) void
+        + ActivateContainer(SCR_InventorySlotUI slotUI, ChimeraCharacter playerCharacter) void
+        + SetCommandName(string name) void
+        + GetCommandName() string
+        + SCR_QuickslotCommandContainer(string name) void
+    }
+
+    class SCR_QuickslotCommandContainer {
+        - m_sCommandName: return
+        + SetCommandName(string name) void
+        + GetCommandName() string
+        + SCR_QuickslotCommandContainer(string name) void
+    }
+
+    class SCR_SalineStorageComponentClass {
+        - m_CharInventoryStorageComp: SCR_CharacterInventoryStorageComponent
+        - m_SalineBag: IEntity
+        - m_fItemRegenerationDuration: float
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - salineTargetSlot: SCR_SalineBagStorageSlot
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - true: return
+        - false: return
+        - true: return
+        + AddSalineBagToSlot(IEntity target, ECharacterHitZoneGroup eHitZoneGroup, IEntity salineBag, float itemRegenerationDuration) bool
+    }
+
+    class SCR_SalineMovedCallback {
+        - m_CharInventoryStorageComp: SCR_CharacterInventoryStorageComponent
+        - m_SalineBag: IEntity
+        - m_fItemRegenerationDuration: float
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - salineTargetSlot: SCR_SalineBagStorageSlot
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - true: return
+        - false: return
+        - true: return
+        + AddSalineBagToSlot(IEntity target, ECharacterHitZoneGroup eHitZoneGroup, IEntity salineBag, float itemRegenerationDuration) bool
+    }
+
+    class SCR_SalineStorageComponent {
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - salineTargetSlot: SCR_SalineBagStorageSlot
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - true: return
+        - false: return
+        - true: return
+        + AddSalineBagToSlot(IEntity target, ECharacterHitZoneGroup eHitZoneGroup, IEntity salineBag, float itemRegenerationDuration) bool
+    }
+
+    class SCR_TourniquetStorageComponentClass {
+        - m_CharInventoryStorageComp: SCR_CharacterInventoryStorageComponent
+        - m_Tourniquet: IEntity
+        - m_iSlotId: int
+        - m_Storage: BaseInventoryStorageComponent
+        - m_bRemove: bool
+        - tqTargetSlot: SCR_TourniquetStorageSlot
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - targetTourniquet: IEntity
+        - tqTargetSlot: SCR_TourniquetStorageSlot
+        - false: return
+        - hitZone: SCR_HitZone
+        - true: return
+        - false: return
+        + AddTourniquetToSlot(IEntity target, ECharacterHitZoneGroup eHitZoneGroup, IEntity tourniquet) void
+        + RemoveTourniquetFromSlot(ECharacterHitZoneGroup eHitZoneGroup, IEntity retrievingCharacter = null) bool
+        + GetOnTourniquetMoved() ScriptInvoker
+    }
+
+    class SCR_TourniquetMovedCallback {
+        - m_CharInventoryStorageComp: SCR_CharacterInventoryStorageComponent
+        - m_Tourniquet: IEntity
+        - m_iSlotId: int
+        - m_Storage: BaseInventoryStorageComponent
+        - m_bRemove: bool
+        - tqTargetSlot: SCR_TourniquetStorageSlot
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - targetTourniquet: IEntity
+        - tqTargetSlot: SCR_TourniquetStorageSlot
+        - false: return
+        - hitZone: SCR_HitZone
+        - true: return
+        - false: return
+        + AddTourniquetToSlot(IEntity target, ECharacterHitZoneGroup eHitZoneGroup, IEntity tourniquet) void
+        + RemoveTourniquetFromSlot(ECharacterHitZoneGroup eHitZoneGroup, IEntity retrievingCharacter = null) bool
+        + GetOnTourniquetMoved() ScriptInvoker
+    }
+
+    class SCR_TourniquetStorageComponent {
+        - tqTargetSlot: SCR_TourniquetStorageSlot
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - targetTourniquet: IEntity
+        - tqTargetSlot: SCR_TourniquetStorageSlot
+        - false: return
+        - hitZone: SCR_HitZone
+        - true: return
+        - false: return
+        + AddTourniquetToSlot(IEntity target, ECharacterHitZoneGroup eHitZoneGroup, IEntity tourniquet) void
+        + RemoveTourniquetFromSlot(ECharacterHitZoneGroup eHitZoneGroup, IEntity retrievingCharacter = null) bool
+        + GetOnTourniquetMoved() ScriptInvoker
+    }
+
+    class SCR_UniversalInventoryStorageComponentClass {
+        - m_fMaxWeight: return
+        - null: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - 0: return
+        - m_iNrOfNonRefundableItems: return
+        + GetMaxLoad() float
+        + IsAdditionalWeightOk( float fWeight ) bool
+        + GetLinkedStorages(notnull out array<BaseInventoryStorageComponent> linkedStorages) int
+        + AddLinkedStorage(BaseInventoryStorageComponent newLinkedStorage) void
+        + IsStorageALinkedChild(notnull BaseInventoryStorageComponent storage) bool
+        + GetNonRefundableItemCount() int
+        + SetNonRefundableItemCount(int refundableItemCount) void
+        + SCR_UniversalInventoryStorageComponent( IEntityComponentSource src, IEntity ent, IEntity parent ) void
+    }
+
+    class class {
+        - m_fMaxWeight: return
+        - null: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - 0: return
+        - m_iNrOfNonRefundableItems: return
+        + GetMaxLoad() float
+        + IsAdditionalWeightOk( float fWeight ) bool
+        + GetLinkedStorages(notnull out array<BaseInventoryStorageComponent> linkedStorages) int
+        + AddLinkedStorage(BaseInventoryStorageComponent newLinkedStorage) void
+        + IsStorageALinkedChild(notnull BaseInventoryStorageComponent storage) bool
+        + GetNonRefundableItemCount() int
+        + SetNonRefundableItemCount(int refundableItemCount) void
+        + SCR_UniversalInventoryStorageComponent( IEntityComponentSource src, IEntity ent, IEntity parent ) void
+    }
+
+    class SCR_WeaponAttachmentAttributes {
+        - false: return
+        + ApplyModifiers(BaseWeaponStatsManagerComponent statsManager, int muzzleIndex, IEntity attachedEntity) bool
+        + ClearModifiers(BaseWeaponStatsManagerComponent statsManager, int muzzleIndex, IEntity attachedEntity) void
+    }
+
+    class SCR_WeaponAttachmentBayonetAttributes {
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+    }
+
+    class SCR_WeaponAttachmentObstructionAttributes {
+        - types: return
+        - types: return
+    }
+
+    class SCR_WeaponAttachmentSuppressorAttributes {
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+    }
+

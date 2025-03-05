@@ -1,0 +1,65 @@
+classDiagram
+
+    class SCR_ExplosiveChargeInventoryItemComponentClass {
+        + IsLocked() return
+    }
+
+    class SCR_ExplosiveChargeInventoryItemComponent {
+        + IsLocked() return
+    }
+
+    class SCR_MineInventoryItemComponentClass {
+        - false: return
+        - s_onMinePlaced: return
+    }
+
+    class SCR_MineInventoryItemComponent {
+        - false: return
+        - s_onMinePlaced: return
+    }
+
+    class SCR_PlaceableInventoryItemComponentClass {
+        - m_ParentRplId: return
+        - m_iParentNodeId: return
+        - s_OnPlacementDoneInvoker: return
+        - false: return
+        - false: return
+        - true: return
+        - true: return
+        - true: return
+        - false: return
+        - soundData: SCR_SoundDataComponent
+        - newParentEntity: IEntity
+        + ScriptInvokerItemPlacedMethod(ChimeraCharacter placingCharacter, SCR_PlaceableInventoryItemComponent placedItemIIC) void
+        + GetParentRplId() RplId
+        + GetParentNodeId() int
+        + PlaceItem() void
+        + ValidateEntity(e) return
+        + SetPlacementPosition(vector right, vector up, vector forward, vector position, RplId characterRplId) void
+        + PlaceItemWithParentChange(RplId newParentRplId, int nodeId = -1) void
+        + AttachToNewParent() else
+        + SetNewParent(RplId parentId = RplId.Invalid() void
+    }
+
+    class SCR_PlaceableInventoryItemComponent {
+        - m_ParentRplId: return
+        - m_iParentNodeId: return
+        - s_OnPlacementDoneInvoker: return
+        - false: return
+        - false: return
+        - true: return
+        - true: return
+        - true: return
+        - false: return
+        - soundData: SCR_SoundDataComponent
+        - newParentEntity: IEntity
+        + GetParentRplId() RplId
+        + GetParentNodeId() int
+        + PlaceItem() void
+        + ValidateEntity(e) return
+        + SetPlacementPosition(vector right, vector up, vector forward, vector position, RplId characterRplId) void
+        + PlaceItemWithParentChange(RplId newParentRplId, int nodeId = -1) void
+        + AttachToNewParent() else
+        + SetNewParent(RplId parentId = RplId.Invalid() void
+    }
+

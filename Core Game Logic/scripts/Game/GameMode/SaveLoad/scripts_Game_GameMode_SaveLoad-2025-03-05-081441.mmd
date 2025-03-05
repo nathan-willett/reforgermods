@@ -1,0 +1,336 @@
+classDiagram
+
+    class SCR_DSSessionCallback {
+        - m_eType: return
+        - m_Info: return
+        - m_sExtension: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - null: return
+        - m_Struct: return
+        - false: return
+        - ext: string
+        - compatible: return
+        - ext: string
+        - saveId: int
+        - latestSaveName: string
+        - fileNameToLoad: string
+        + GetSaveType() ESaveType
+        + GetInfo() SCR_UIInfo
+        + GetExtension() string
+        + SaveSession(string fileName, WorldSaveManifest manifest = null, WorldSaveItem usedSave = null) bool
+        + LoadSession(string fileName) bool
+        + Delete(string missionFileName, string customName) bool
+        + IsCompatible(fileName) return
+        + Delete(string fileName) bool
+        + FileExists(string fileName, string customName = string.Empty) bool
+        + GetGame() return
+        + GetMeta(string fileName) SCR_MetaStruct
+        + SetStruct(SCR_MissionStruct struct) void
+        + GetStruct() SCR_MissionStruct
+        + Log() void
+        + IsConfigured() bool
+        + IsCompatible(string fileName) bool
+        + GetMissionFileName(string fileName) string
+        + GetCustomName(string fileName) string
+        + GetCurrentCustomName() string
+        + GetCustomName(m_sCurrentFileName) return
+        + GetFileName(string missionFileName, string customName) string
+        + OnGameStart(string missionFileName) void
+        + OnGameEnd(string missionFileName) void
+        + SCR_DSSessionCallback() void
+    }
+
+    class SCR_NumberedDSSessionCallback {
+        - saveId: int
+        - latestSaveName: string
+        - fileNameToLoad: string
+    }
+
+    class SCR_DisposableDSSessionCallback {
+        - fileNameToLoad: string
+    }
+
+    class SCR_EditedSaveManifest {
+        - m_Manifest: return
+        - m_sEditingValue: return
+        - m_Value: return
+        + GetManifest() WorldSaveManifest
+        + GetEditingValue() string
+        + SetEditingValue(string value) void
+        + GetValue() string
+        + SetValue(string value) void
+        + SCR_EditedSaveManifest(WorldSaveManifest manifest = null) void
+    }
+
+    class SCR_JsonApiStruct {
+        - false: return
+        - false: return
+        + Serialize() bool
+        + Deserialize() bool
+        + ClearCache() void
+        + Log() void
+    }
+
+    class SCR_LatestSaveDSSessionCallback {
+        - m_bIsLoaded: return
+        + SetFileName(string missionFileName, string saveFileName) void
+        + RemoveFileName(string missionFileName) void
+        + FindFileName(string missionFileName, out string outSaveFileName) bool
+        + Log() void
+        + WriteToFile() void
+        + ReadFromFile() void
+        + IsLoaded() bool
+    }
+
+    class SCR_LatestSaveStruct {
+        - entry: SCR_LatestSaveEntryStruct
+        - true: return
+        - false: return
+        - wFn: string
+        - sFn: string
+        + SetFileName(string missionFileName, string saveFileName) void
+        + RemoveFileName(string missionFileName) void
+        + FindFileName(string missionFileName, out string outSaveFileName) bool
+        + Log() void
+        + SCR_LatestSaveStruct() void
+        + SCR_LatestSaveEntryStruct() void
+    }
+
+    class SCR_LatestSaveEntryStruct {
+        - wFn: string
+        - sFn: string
+        + SCR_LatestSaveEntryStruct() void
+    }
+
+    class SCR_MetaStruct {
+        - hR: return
+        - sA: return
+        - false: return
+        - true: return
+        - true: return
+        - true: return
+        + IsVersionCompatible(out string versionName = string.Empty) bool
+        + GetHeaderResource() string
+        + GetScenarioAddon() string
+        + GetDateAndTime(out int year, out int month, out int day, out int hour, out int minute) void
+        + AreAddonsCompatible() bool
+        + IsValid() bool
+        + SCR_MetaStruct() void
+    }
+
+    class inheritance {
+        - m_Meta: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        + GetMeta() SCR_MetaStruct
+        + ContainsStruct(typename structType) bool
+        + SCR_MissionStruct() void
+    }
+
+    class SCR_MissionStruct {
+        - m_Meta: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        + GetMeta() SCR_MetaStruct
+        + ContainsStruct(typename structType) bool
+        + SCR_MissionStruct() void
+    }
+
+    class SCR_JsonApiStruct {
+        - m_Meta: return
+        - false: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - true: return
+        + GetMeta() SCR_MetaStruct
+        + ContainsStruct(typename structType) bool
+        + SCR_MissionStruct() void
+    }
+
+    class SCR_SaveLoadComponentClass {
+        - null: return
+        - m_SaveOnExit: return
+        - m_DebugHeaderResourceName: return
+        + CanSaveOnExit() bool
+        + GetDebugHeaderResourceName() ResourceName
+        + ContainsStruct(typename structType) bool
+    }
+
+    class SCR_SaveLoadComponent {
+        - null: return
+        - m_SaveOnExit: return
+        - m_DebugHeaderResourceName: return
+        + CanSaveOnExit() bool
+        + GetDebugHeaderResourceName() ResourceName
+        + ContainsStruct(typename structType) bool
+    }
+
+    class SCR_SaveManagerCore {
+        - false: return
+        - false: return
+        - false: return
+        - latestSaveFileName: string
+        - false: return
+        - true: return
+        - false: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - null: return
+        - missionFileName: string
+        - ext: string
+        - false: return
+        - null: return
+        - callback: return
+        - null: return
+        - callback: return
+        - null: return
+        - false: return
+        - latestSaveFileName: string
+        - false: return
+        - false: return
+        - true: return
+        - save: return
+        - saveFileName: string
+        - saveFileName: string
+        - m_OnSaved: return
+        - m_OnSaveFailed: return
+        - m_OnLoaded: return
+        - m_OnDeleted: return
+        - m_OnLatestSave: return
+        - m_UploadCallback: return
+        - fileNameToLoad: string
+        - fileName: string
+        - latestSaveFileName: string
+        - fileName: string
+        - nameFormated: string
+        - fileNameToLoad: string
+        - m_OnInitialize: return
+        + Save(ESaveType type, string customName = string.Empty, WorldSaveManifest manifest = null, WorldSaveItem usedSave = null) bool
+        + OverrideCurrentSave(ESaveType type) bool
+        + Load(string fileName) bool
+        + RestartAndLoad() bool
+        + FindLatestSave(m_sMissionSaveFileName, latestSaveFileName) return
+        + RestartAndLoad(ESaveType type, string customName = string.Empty) bool
+        + RestartAndLoad(fileName) return
+        + RestartAndLoad(string fileName) bool
+        + Delete(ESaveType type, string customName = string.Empty) bool
+        + Delete(string fileName) bool
+        + FileExists(ESaveType type, string customName = string.Empty) bool
+        + FileExists(string fileName) bool
+        + GetGame() return
+        + CanSaveToCloud() bool
+        + GetMeta(string fileName) SCR_MetaStruct
+        + GetLocalSaveFiles(out notnull array<string> outLocalSaves, ESaveType saveTypes, bool currentMissionOnly) int
+        + GetLocalSaveFiles(outLocalSaves, saveTypes, missionFileName) return
+        + GetLocalSaveFiles(out notnull array<string> outLocalSaves, ESaveType saveTypes, string missionFileName = string.Empty) int
+        + CanSave(ESaveType type) bool
+        + SetStruct(ESaveType type, SCR_MissionStruct struct) void
+        + Log(ESaveType type) void
+        + GetMissionFileName(string fileName) string
+        + GetCustomName(string fileName) string
+        + GetSaveTypeInfo(string fileName) SCR_UIInfo
+        + UploadToWorkshop(string fileName) void
+        + SetFileNameToLoad(SCR_MissionHeader missionHeader) bool
+        + SetFileNameToLoad(latestSaveFileName) return
+        + SetFileNameToLoad(string fileName) bool
+        + ResetFileNameToLoad() void
+        + FindFileNameToLoad(out string fileNameToLoad) bool
+        + FindFileNameById(string id) string
+        + SetCurrentMissionLatestSave(string saveFileName) void
+        + RemoveCurrentMissionLatestSave() void
+        + FindCurrentMissionLatestSave(out string outSaveFileName) bool
+        + FindLatestSave(m_sMissionSaveFileName, outSaveFileName) return
+        + SetLatestSave(string missionFileName, string saveFileName) void
+        + RemoveLatestSave(string missionFileName) void
+        + FindLatestSave(string missionFileName, out string outSaveFileName) bool
+        + FindLatestSave(SCR_MissionHeader missionHeader, out string outSaveFileName) bool
+        + HasLatestSave(string missionFileName) bool
+        + FindLatestSave(missionFileName, saveFileName) return
+        + HasLatestSave(SCR_MissionHeader missionHeader) bool
+        + GetOnSaved() ScriptInvoker_SaveManagerCore
+        + GetOnSaveFailed() ScriptInvoker_SaveManagerCore
+        + GetOnLoaded() ScriptInvoker_SaveManagerCore
+        + GetOnDeleted() ScriptInvoker_SaveManagerCore
+        + GetOnLatestSave() ScriptInvokerString
+        + GetUploadCallback() SCR_ServerSaveRequestCallback
+        + LoadOnInit() void
+        + PrintFormat("There is no latest save file name for mission '%1'", latestSaveFileName) else
+        + GetOnInitialize() ScriptInvokerVoid
+    }
+
+    class SCR_DSSessionCallbackSessionStorage {
+        - m_OnInitialize: return
+        + GetOnInitialize() ScriptInvokerVoid
+    }
+
+    class SCR_SaveWorkshopManager {
+        - s_Instance: return
+        - false: return
+        - true: return
+        - null: return
+        - mission: return
+        - FALLBACK_SCENARIO_ID: return
+        - name: return
+        - FALLBACK_SCENARIO_NAME: return
+        - FALLBACK_SCENARIO_NAME: return
+        - name: return
+        - save: WorldSaveItem
+        - rev: Revision
+        - save: return
+        - save: return
+        - null: return
+        - id: return
+        - fileName: return
+        - m_UploadCallback: return
+        - m_LoadSavesPageCallback: return
+        - m_DeletePublishedCallback: return
+        - m_sCurrentSave: return
+        - m_OnCurrentSaveChanged: return
+        - m_EditedManifest: return
+        + Init() void
+        + UploadSave(notnull WorldSaveItem save, notnull WorldSaveManifest manifest, bool public) void
+        + DeleteOfflineSaveByName(string fileName) bool
+        + DeletePublishedSave(notnull WorldSaveItem save) void
+        + GetGame() return
+        + GetScenarioNameFile(missionItem) return
+        + CurrentScenarioImage() ResourceName
+        + GetOfflineSaves(out array<WorldSaveItem> saves) void
+        + FindSaveItemBySaveFileName(string fileName) WorldSaveItem
+        + GetUploadCallback() SCR_BackendCallback
+        + GetLoadSavesPageCallback() SCR_BackendCallback
+        + GetDeletePublishedCallback() SCR_BackendCallback
+        + SetCurrentSave(string fileName, WorldSaveItem saveItem) void
+        + GetCurrentSave(out WorldSaveItem saveItem) string
+        + GetOnCurrentSaveChanged() ScriptInvokerString
+        + SetEditedSaveManifest(WorldSaveManifest manifest, string editingValue = "", string value = "") void
+        + ClearEditedSaveManifest() void
+        + SetEditedSaveManifestEditingValue(string editingValue) void
+        + GetEditedSaveManifest() SCR_EditedSaveManifest
+    }
+
+    class SCR_ServerSaveRequestCallback {
+        - save: WorldSaveItem
+        + SCR_ServerSaveRequestCallback(string fileName) void
+    }
+
+    class SCR_UploadSaveCallback_PageParams {
+    }
+

@@ -1,0 +1,33 @@
+classDiagram
+
+    class SCR_CreateNewSaveDialog {
+        + SCR_CreateNewSaveDialog() void
+    }
+
+    class SCR_EditorSaveDialog {
+        - saveItem: WorldSaveItem
+        - item: WorkshopItem
+        - property: SCR_LocalizedProperty
+        - checkbox: SCR_ListBoxElementComponent
+        - null: return
+        - saveItem: WorldSaveItem
+        - manifest: return
+        - checkbox: SCR_ListBoxElementComponent
+        - picker: SCR_WidgetListEntryResourcePicker
+    }
+
+    class SCR_PublishSaveDialog {
+        + SCR_PublishSaveDialog() void
+    }
+
+    class SCR_SaveWorkshopManagerUI {
+        - m_Instance: return
+        - dialogUI: return
+        - m_CachedEditorSaveDialog: return
+        + SetCachedEditSaveDialog(SCR_EditorSaveDialog dialog) void
+        + GetCachedEditSaveDialog() SCR_EditorSaveDialog
+        + SetupSaveImageCaptureCallback() void
+        + ClearSaveImageCaptureCallback() void
+        + SCR_PublishSaveDialog() new
+    }
+

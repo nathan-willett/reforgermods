@@ -1,0 +1,932 @@
+classDiagram
+
+    class SCR_BaseGameModeClass {
+	    - m_OnResourceTypeEnabledChanged: return
+	    - m_eGameState: return
+	    - m_fTimeElapsed: return
+	    - time: return
+	    - m_bIsHosted: return
+	    - m_pRespawnSystemComponent: return
+	    - m_pGameModeHealthSettings: return
+	    - m_ScoringSystemComponent: return
+	    - true: return
+	    - null: return
+	    - m_pGameEndData: return
+	    - Event_OnGameStart: return
+	    - m_OnGameEnd: return
+	    - m_OnPlayerAuditSuccess: return
+	    - m_OnPlayerAuditFail: return
+	    - m_OnPlayerAuditTimeouted: return
+	    - m_OnPlayerAuditRevived: return
+	    - m_OnPlayerConnected: return
+	    - m_OnPlayerRegistered: return
+	    - m_OnPlayerDisconnected: return
+	    - m_OnPostCompPlayerDisconnected: return
+	    - m_OnPlayerSpawned: return
+	    - m_OnPlayerKilled: return
+	    - m_OnPlayerDeleted: return
+	    - m_OnPlayerRoleChange: return
+	    - m_OnWorldPostProcess: return
+	    - m_OnControllableSpawned: return
+	    - m_OnControllableDestroyed: return
+	    - m_OnControllableDeleted: return
+	    - m_OnGameModeEnd: return
+	    - m_GameEndTimeStamp: return
+	    - autoReloadTimeString: string
+	    - m_fAutoReloadTime: return
+	    - m_bAllowFactionChange: return
+	    - false: return
+	    - true: return
+	    - false: return
+	    - true: return
+	    - base: SCR_CampaignMilitaryBaseComponent
+	    - resourceComp: SCR_ResourceComponent
+	    - false: return
+	    - true: return
+	    - base: SCR_CampaignMilitaryBaseComponent
+	    - resourceComp: SCR_ResourceComponent
+	    - false: return
+	    - availableSupplies: float
+	    - false: return
+	    - true: return
+	    - 0: return
+	    - true: return
+	    - gameFlags: EGameFlags
+	    - true: return
+	    - m_bAllowControls: return
+	    - true: return
+	    - stateComponent: SCR_BaseGameModeStateComponent
+	    - stateComponent: return
+	    - null: return
+	    - false: return
+	    - m_OnPreloadFinished: return
+	    - false: return
+	    + IsRunning() or
+	    + SCR_BaseGameMode_OnPlayerDisconnected(int playerId, KickCauseCode cause = KickCauseCode.NONE, int timeout = -1) void
+	    + SCR_BaseGameMode_OnControllableDestroyed(notnull SCR_InstigatorContextData instigatorContextData) void
+	    + SCR_BaseGameMode_PlayerId(int playerId) void
+	    + SCR_BaseGameMode_PlayerIdAndEntity(int playerId, IEntity player) void
+	    + SCR_BaseGameMode_OnPlayerRoleChanged(int playerId, EPlayerRole roleFlags) void
+	    + SCR_BaseGameMode_OnResourceEnabledChanged(array disabledResourceTypes) void
+	    + OnPreloadFinished() void
+	    + IsResourceTypeEnabled(EResourceType resourceType = EResourceType.SUPPLIES) bool
+	    + GetDisabledResourceTypes(inout notnull array disabledResourceTypes) int
+	    + SetResourceTypeEnabled(bool enable, EResourceType resourceType = EResourceType.SUPPLIES, int playerID = -1) void
+	    + CanStartSpawnPreload() bool
+	    + IsRunning() bool
+	    + GetState() SCR_EGameModeState
+	    + GetElapsedTime() float
+	    + GetTimeLimit() float
+	    + GetRemainingTime() float
+	    + IsHosted() bool
+	    + CachePlayerSpawnPosition(int playerID, vector position) void
+	    + GetRespawnSystemComponent() SCR_RespawnSystemComponent
+	    + GetGameModeHealthSettings() SCR_GameModeHealthSettings
+	    + GetScoringSystemComponent() SCR_BaseScoringSystemComponent
+	    + StartGameMode() void
+	    + EndGameMode(SCR_GameModeEndData endData) void
+	    + GetEndGameData() SCR_GameModeEndData
+	    + GetOnGameStart() ScriptInvoker
+	    + GetOnGameEnd() ScriptInvoker
+	    + GetOnWorldPostProcess() ScriptInvoker
+	    + GetOnControllableSpawned() ScriptInvoker
+	    + GetOnControllableDeleted() ScriptInvoker
+	    + GetOnGameModeEnd() ScriptInvoker
+	    + GetGameEndTimeStamp() WorldTimestamp
+	    + GetAutoReloadDelay() float
+	    + OnGameEnd() void
+	    + IsFactionChangeAllowed() bool
+	    + OnSpawnPlayerEntityFailure_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnData data, SCR_ESpawnResult reason) void
+	    + OnPlayerEntityChanged_S(int playerId, IEntity previousEntity, IEntity newEntity) void
+	    + PreparePlayerEntity_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) bool
+	    + OnPlayerSpawnFinalize_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) void
+	    + OnPlayerSpawnOnPoint_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnPointSpawnData spawnPointData) void
+	    + OnPlayerLoadoutSet_S(SCR_PlayerLoadoutComponent loadoutComponent, SCR_BasePlayerLoadout loadout) void
+	    + OnPlayerFactionSet_S(SCR_PlayerFactionAffiliationComponent factionComponent, Faction faction) void
+	    + CanPlayerSpawn_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, out SCR_ESpawnResult result = SCR_ESpawnResult.SPAWN_NOT_ALLOWED) bool
+	    + GetPlayerRemainingRespawnTime(int playerID) int
+	    + Diag_DrawPlayersWindow() void
+	    + Diag_DrawPlayerInfo(int playerId) void
+	    + Diag_DrawControlledEntitiesWindow() void
+	    + Diag_DrawControlledEntityInfo(int playerId) void
+	    + Diag_DrawComponentsWindow() void
+	    + Diag_DrawComponentInfo(int index, SCR_BaseGameModeComponent component) void
+	    + Diag_DrawGameModeWindow() void
+	    + HandleOnTasksInitialized() void
+	    + GetAllowControls() bool
+	    + GetStateComponent(SCR_EGameModeState state) SCR_BaseGameModeStateComponent
+	    + PauseGame(bool pause, SCR_EPauseReason reason = SCR_EPauseReason.SYSTEM) bool
+	    + CanBePaused() bool
+	    + GetOnPreloadFinished() OnPreloadFinishedInvoker
+	    + StartSpawnPreload(vector position) void
+	    + SCR_BaseGameMode(IEntitySource src, IEntity parent) void
+	    + GetGame() return
+    }
+    class it {
+	    - m_OnResourceTypeEnabledChanged: return
+	    - m_eGameState: return
+	    - m_fTimeElapsed: return
+	    - time: return
+	    - m_bIsHosted: return
+	    - m_pRespawnSystemComponent: return
+	    - m_pGameModeHealthSettings: return
+	    - m_ScoringSystemComponent: return
+	    - true: return
+	    - null: return
+	    - m_pGameEndData: return
+	    - Event_OnGameStart: return
+	    - m_OnGameEnd: return
+	    - m_OnPlayerAuditSuccess: return
+	    - m_OnPlayerAuditFail: return
+	    - m_OnPlayerAuditTimeouted: return
+	    - m_OnPlayerAuditRevived: return
+	    - m_OnPlayerConnected: return
+	    - m_OnPlayerRegistered: return
+	    - m_OnPlayerDisconnected: return
+	    - m_OnPostCompPlayerDisconnected: return
+	    - m_OnPlayerSpawned: return
+	    - m_OnPlayerKilled: return
+	    - m_OnPlayerDeleted: return
+	    - m_OnPlayerRoleChange: return
+	    - m_OnWorldPostProcess: return
+	    - m_OnControllableSpawned: return
+	    - m_OnControllableDestroyed: return
+	    - m_OnControllableDeleted: return
+	    - m_OnGameModeEnd: return
+	    - m_GameEndTimeStamp: return
+	    - autoReloadTimeString: string
+	    - m_fAutoReloadTime: return
+	    - m_bAllowFactionChange: return
+	    - false: return
+	    - true: return
+	    - false: return
+	    - true: return
+	    - base: SCR_CampaignMilitaryBaseComponent
+	    - resourceComp: SCR_ResourceComponent
+	    - false: return
+	    - true: return
+	    - base: SCR_CampaignMilitaryBaseComponent
+	    - resourceComp: SCR_ResourceComponent
+	    - false: return
+	    - availableSupplies: float
+	    - false: return
+	    - true: return
+	    - 0: return
+	    - true: return
+	    - gameFlags: EGameFlags
+	    - true: return
+	    - m_bAllowControls: return
+	    - true: return
+	    - stateComponent: SCR_BaseGameModeStateComponent
+	    - stateComponent: return
+	    - null: return
+	    - false: return
+	    - m_OnPreloadFinished: return
+	    - false: return
+	    + SCR_BaseGameMode_OnPlayerDisconnected(int playerId, KickCauseCode cause = KickCauseCode.NONE, int timeout = -1) void
+	    + SCR_BaseGameMode_OnControllableDestroyed(notnull SCR_InstigatorContextData instigatorContextData) void
+	    + SCR_BaseGameMode_PlayerId(int playerId) void
+	    + SCR_BaseGameMode_PlayerIdAndEntity(int playerId, IEntity player) void
+	    + SCR_BaseGameMode_OnPlayerRoleChanged(int playerId, EPlayerRole roleFlags) void
+	    + SCR_BaseGameMode_OnResourceEnabledChanged(array disabledResourceTypes) void
+	    + OnPreloadFinished() void
+	    + IsResourceTypeEnabled(EResourceType resourceType = EResourceType.SUPPLIES) bool
+	    + GetDisabledResourceTypes(inout notnull array disabledResourceTypes) int
+	    + SetResourceTypeEnabled(bool enable, EResourceType resourceType = EResourceType.SUPPLIES, int playerID = -1) void
+	    + CanStartSpawnPreload() bool
+	    + IsRunning() bool
+	    + GetState() SCR_EGameModeState
+	    + GetElapsedTime() float
+	    + GetTimeLimit() float
+	    + GetRemainingTime() float
+	    + IsHosted() bool
+	    + CachePlayerSpawnPosition(int playerID, vector position) void
+	    + GetRespawnSystemComponent() SCR_RespawnSystemComponent
+	    + GetGameModeHealthSettings() SCR_GameModeHealthSettings
+	    + GetScoringSystemComponent() SCR_BaseScoringSystemComponent
+	    + StartGameMode() void
+	    + EndGameMode(SCR_GameModeEndData endData) void
+	    + GetEndGameData() SCR_GameModeEndData
+	    + GetOnGameStart() ScriptInvoker
+	    + GetOnGameEnd() ScriptInvoker
+	    + GetOnWorldPostProcess() ScriptInvoker
+	    + GetOnControllableSpawned() ScriptInvoker
+	    + GetOnControllableDeleted() ScriptInvoker
+	    + GetOnGameModeEnd() ScriptInvoker
+	    + GetGameEndTimeStamp() WorldTimestamp
+	    + GetAutoReloadDelay() float
+	    + OnGameEnd() void
+	    + IsFactionChangeAllowed() bool
+	    + OnSpawnPlayerEntityFailure_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnData data, SCR_ESpawnResult reason) void
+	    + OnPlayerEntityChanged_S(int playerId, IEntity previousEntity, IEntity newEntity) void
+	    + PreparePlayerEntity_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) bool
+	    + OnPlayerSpawnFinalize_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) void
+	    + OnPlayerSpawnOnPoint_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnPointSpawnData spawnPointData) void
+	    + OnPlayerLoadoutSet_S(SCR_PlayerLoadoutComponent loadoutComponent, SCR_BasePlayerLoadout loadout) void
+	    + OnPlayerFactionSet_S(SCR_PlayerFactionAffiliationComponent factionComponent, Faction faction) void
+	    + CanPlayerSpawn_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, out SCR_ESpawnResult result = SCR_ESpawnResult.SPAWN_NOT_ALLOWED) bool
+	    + GetPlayerRemainingRespawnTime(int playerID) int
+	    + Diag_DrawPlayersWindow() void
+	    + Diag_DrawPlayerInfo(int playerId) void
+	    + Diag_DrawControlledEntitiesWindow() void
+	    + Diag_DrawControlledEntityInfo(int playerId) void
+	    + Diag_DrawComponentsWindow() void
+	    + Diag_DrawComponentInfo(int index, SCR_BaseGameModeComponent component) void
+	    + Diag_DrawGameModeWindow() void
+	    + HandleOnTasksInitialized() void
+	    + GetAllowControls() bool
+	    + GetStateComponent(SCR_EGameModeState state) SCR_BaseGameModeStateComponent
+	    + PauseGame(bool pause, SCR_EPauseReason reason = SCR_EPauseReason.SYSTEM) bool
+	    + CanBePaused() bool
+	    + GetOnPreloadFinished() OnPreloadFinishedInvoker
+	    + StartSpawnPreload(vector position) void
+	    + SCR_BaseGameMode(IEntitySource src, IEntity parent) void
+	    + GetGame() return
+    }
+    class SCR_BaseGameMode {
+	    - m_OnResourceTypeEnabledChanged: return
+	    - m_eGameState: return
+	    - m_fTimeElapsed: return
+	    - time: return
+	    - m_bIsHosted: return
+	    - m_pRespawnSystemComponent: return
+	    - m_pGameModeHealthSettings: return
+	    - m_ScoringSystemComponent: return
+	    - true: return
+	    - null: return
+	    - m_pGameEndData: return
+	    - Event_OnGameStart: return
+	    - m_OnGameEnd: return
+	    - m_OnPlayerAuditSuccess: return
+	    - m_OnPlayerAuditFail: return
+	    - m_OnPlayerAuditTimeouted: return
+	    - m_OnPlayerAuditRevived: return
+	    - m_OnPlayerConnected: return
+	    - m_OnPlayerRegistered: return
+	    - m_OnPlayerDisconnected: return
+	    - m_OnPostCompPlayerDisconnected: return
+	    - m_OnPlayerSpawned: return
+	    - m_OnPlayerKilled: return
+	    - m_OnPlayerDeleted: return
+	    - m_OnPlayerRoleChange: return
+	    - m_OnWorldPostProcess: return
+	    - m_OnControllableSpawned: return
+	    - m_OnControllableDestroyed: return
+	    - m_OnControllableDeleted: return
+	    - m_OnGameModeEnd: return
+	    - m_GameEndTimeStamp: return
+	    - autoReloadTimeString: string
+	    - m_fAutoReloadTime: return
+	    - m_bAllowFactionChange: return
+	    - false: return
+	    - true: return
+	    - false: return
+	    - true: return
+	    - base: SCR_CampaignMilitaryBaseComponent
+	    - resourceComp: SCR_ResourceComponent
+	    - false: return
+	    - true: return
+	    - base: SCR_CampaignMilitaryBaseComponent
+	    - resourceComp: SCR_ResourceComponent
+	    - false: return
+	    - availableSupplies: float
+	    - false: return
+	    - true: return
+	    - 0: return
+	    - true: return
+	    - gameFlags: EGameFlags
+	    - true: return
+	    - m_bAllowControls: return
+	    - true: return
+	    - stateComponent: SCR_BaseGameModeStateComponent
+	    - stateComponent: return
+	    - null: return
+	    - false: return
+	    - m_OnPreloadFinished: return
+	    - false: return
+	    + IsResourceTypeEnabled(EResourceType resourceType = EResourceType.SUPPLIES) bool
+	    + GetDisabledResourceTypes(inout notnull array disabledResourceTypes) int
+	    + SetResourceTypeEnabled(bool enable, EResourceType resourceType = EResourceType.SUPPLIES, int playerID = -1) void
+	    + CanStartSpawnPreload() bool
+	    + IsRunning() bool
+	    + GetState() SCR_EGameModeState
+	    + GetElapsedTime() float
+	    + GetTimeLimit() float
+	    + GetRemainingTime() float
+	    + IsHosted() bool
+	    + CachePlayerSpawnPosition(int playerID, vector position) void
+	    + GetRespawnSystemComponent() SCR_RespawnSystemComponent
+	    + GetGameModeHealthSettings() SCR_GameModeHealthSettings
+	    + GetScoringSystemComponent() SCR_BaseScoringSystemComponent
+	    + StartGameMode() void
+	    + EndGameMode(SCR_GameModeEndData endData) void
+	    + GetEndGameData() SCR_GameModeEndData
+	    + GetOnGameStart() ScriptInvoker
+	    + GetOnGameEnd() ScriptInvoker
+	    + GetOnWorldPostProcess() ScriptInvoker
+	    + GetOnControllableSpawned() ScriptInvoker
+	    + GetOnControllableDeleted() ScriptInvoker
+	    + GetOnGameModeEnd() ScriptInvoker
+	    + GetGameEndTimeStamp() WorldTimestamp
+	    + GetAutoReloadDelay() float
+	    + OnGameEnd() void
+	    + IsFactionChangeAllowed() bool
+	    + OnSpawnPlayerEntityFailure_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnData data, SCR_ESpawnResult reason) void
+	    + OnPlayerEntityChanged_S(int playerId, IEntity previousEntity, IEntity newEntity) void
+	    + PreparePlayerEntity_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) bool
+	    + OnPlayerSpawnFinalize_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) void
+	    + OnPlayerSpawnOnPoint_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnPointSpawnData spawnPointData) void
+	    + OnPlayerLoadoutSet_S(SCR_PlayerLoadoutComponent loadoutComponent, SCR_BasePlayerLoadout loadout) void
+	    + OnPlayerFactionSet_S(SCR_PlayerFactionAffiliationComponent factionComponent, Faction faction) void
+	    + CanPlayerSpawn_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, out SCR_ESpawnResult result = SCR_ESpawnResult.SPAWN_NOT_ALLOWED) bool
+	    + GetPlayerRemainingRespawnTime(int playerID) int
+	    + Diag_DrawPlayersWindow() void
+	    + Diag_DrawPlayerInfo(int playerId) void
+	    + Diag_DrawControlledEntitiesWindow() void
+	    + Diag_DrawControlledEntityInfo(int playerId) void
+	    + Diag_DrawComponentsWindow() void
+	    + Diag_DrawComponentInfo(int index, SCR_BaseGameModeComponent component) void
+	    + Diag_DrawGameModeWindow() void
+	    + HandleOnTasksInitialized() void
+	    + GetAllowControls() bool
+	    + GetStateComponent(SCR_EGameModeState state) SCR_BaseGameModeStateComponent
+	    + PauseGame(bool pause, SCR_EPauseReason reason = SCR_EPauseReason.SYSTEM) bool
+	    + CanBePaused() bool
+	    + GetOnPreloadFinished() OnPreloadFinishedInvoker
+	    + StartSpawnPreload(vector position) void
+	    + SCR_BaseGameMode(IEntitySource src, IEntity parent) void
+	    + GetGame() return
+    }
+    class SCR_BaseGameModeComponentClass {
+	    - m_pGameMode: return
+	    - true: return
+	    - true: return
+	    + GetGameMode() SCR_BaseGameMode
+	    + OnGameEnd() void
+	    + OnGameStateChanged(SCR_EGameModeState state) void
+	    + OnGameModeStart() void
+	    + OnGameModeEnd(SCR_GameModeEndData data) void
+	    + OnPlayerConnected(int playerId) void
+	    + OnPlayerAuditSuccess(int playerId) void
+	    + OnPlayerAuditFail(int playerId) void
+	    + OnPlayerAuditTimeouted(int playerId) void
+	    + OnPlayerAuditRevived(int playerId) void
+	    + OnPlayerRegistered(int playerId) void
+	    + OnPlayerDisconnected(int playerId, KickCauseCode cause, int timeout) void
+	    + OnPlayerSpawned(int playerId, IEntity controlledEntity) void
+	    + PreparePlayerEntity_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) bool
+	    + OnSpawnPlayerEntityFailure_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnData data, SCR_ESpawnResult reason) void
+	    + OnPlayerSpawnFinalize_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) void
+	    + HandlePlayerKilled(int playerId, IEntity playerEntity, IEntity killerEntity, notnull Instigator instigator) bool
+	    + OnPlayerKilled(notnull SCR_InstigatorContextData instigatorContextData) void
+	    + OnPlayerKilledHandled(int playerId, IEntity playerEntity, IEntity killerEntity, notnull Instigator instigator) void
+	    + OnPlayerDeleted(int playerId, IEntity player) void
+	    + OnPlayerRoleChange(int playerId, EPlayerRole roleFlags) void
+	    + OnWorldPostProcess(World world) void
+	    + HandleOnLoadoutAssigned(int playerID, SCR_BasePlayerLoadout assignedLoadout) void
+	    + HandleOnFactionAssigned(int playerID, Faction assignedFaction) void
+	    + HandleOnSpawnPointAssigned(int playerID, SCR_SpawnPoint spawnPoint) void
+	    + OnControllableSpawned(IEntity entity) void
+	    + OnControllableDestroyed(notnull SCR_InstigatorContextData instigatorContextData) void
+	    + OnControllableDeleted(IEntity entity) void
+	    + SCR_BaseGameModeComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+    class SCR_BaseGameModeComponent {
+	    - m_pGameMode: return
+	    - true: return
+	    - true: return
+	    + GetGameMode() SCR_BaseGameMode
+	    + OnGameEnd() void
+	    + OnGameStateChanged(SCR_EGameModeState state) void
+	    + OnGameModeStart() void
+	    + OnGameModeEnd(SCR_GameModeEndData data) void
+	    + OnPlayerConnected(int playerId) void
+	    + OnPlayerAuditSuccess(int playerId) void
+	    + OnPlayerAuditFail(int playerId) void
+	    + OnPlayerAuditTimeouted(int playerId) void
+	    + OnPlayerAuditRevived(int playerId) void
+	    + OnPlayerRegistered(int playerId) void
+	    + OnPlayerDisconnected(int playerId, KickCauseCode cause, int timeout) void
+	    + OnPlayerSpawned(int playerId, IEntity controlledEntity) void
+	    + PreparePlayerEntity_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) bool
+	    + OnSpawnPlayerEntityFailure_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, IEntity entity, SCR_SpawnData data, SCR_ESpawnResult reason) void
+	    + OnPlayerSpawnFinalize_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity) void
+	    + HandlePlayerKilled(int playerId, IEntity playerEntity, IEntity killerEntity, notnull Instigator instigator) bool
+	    + OnPlayerKilled(notnull SCR_InstigatorContextData instigatorContextData) void
+	    + OnPlayerKilledHandled(int playerId, IEntity playerEntity, IEntity killerEntity, notnull Instigator instigator) void
+	    + OnPlayerDeleted(int playerId, IEntity player) void
+	    + OnPlayerRoleChange(int playerId, EPlayerRole roleFlags) void
+	    + OnWorldPostProcess(World world) void
+	    + HandleOnLoadoutAssigned(int playerID, SCR_BasePlayerLoadout assignedLoadout) void
+	    + HandleOnFactionAssigned(int playerID, Faction assignedFaction) void
+	    + HandleOnSpawnPointAssigned(int playerID, SCR_SpawnPoint spawnPoint) void
+	    + OnControllableSpawned(IEntity entity) void
+	    + OnControllableDestroyed(notnull SCR_InstigatorContextData instigatorContextData) void
+	    + OnControllableDeleted(IEntity entity) void
+	    + SCR_BaseGameModeComponent(IEntityComponentSource src, IEntity ent, IEntity parent) void
+    }
+    class SCR_BaseGameModeStateComponentClass {
+	    - true: return
+	    - 0: return
+	    - true: return
+	    + GetAllowControls() bool
+	    + GetDuration() float
+	    + CanAdvanceState(SCR_EGameModeState nextState) bool
+	    + GetAffiliatedState() SCR_EGameModeState
+    }
+    class SCR_BaseGameModeStateComponent {
+	    - true: return
+	    - 0: return
+	    - true: return
+	    + GetAllowControls() bool
+	    + GetDuration() float
+	    + CanAdvanceState(SCR_EGameModeState nextState) bool
+	    + GetAffiliatedState() SCR_EGameModeState
+    }
+    class SCR_GameGameModeStateComponentClass {
+	    - m_fDuration: return
+	    - true: return
+	    - false: return
+	    - true: return
+    }
+    class SCR_GameGameModeStateComponent {
+	    - m_fDuration: return
+	    - true: return
+	    - false: return
+	    - true: return
+    }
+    class SCR_GameModeCampaignClass {
+	    - m_OnFactionAssignedLocalPlayer: return
+	    - m_OnStarted: return
+	    - m_OnMatchSituationChanged: return
+	    - m_OnCallsignOffsetChanged: return
+	    - m_iSuppliesReplenishThreshold: return
+	    - m_iQuickSuppliesReplenishThreshold: return
+	    - m_fQuickSuppliesReplenishMultiplier: return
+	    - m_iSuppliesArrivalInterval: return
+	    - m_iRegularSuppliesIncome: return
+	    - m_iRegularSuppliesIncomeBase: return
+	    - m_iRegularSuppliesIncomeExtra: return
+	    - m_iSupplyDepotIconThreshold: return
+	    - m_BaseManager: return
+	    - m_fVictoryTimer: return
+	    - m_iControlPointsThreshold: return
+	    - m_iMinStartingSupplies: return
+	    - m_iMaxStartingSupplies: return
+	    - m_iStartingSuppliesInterval: return
+	    - m_bRemnantsStateLoaded: return
+	    - m_bIsSessionLoadInProgress: return
+	    - m_sSeekDestroyWaypointPrefab: return
+	    - m_iWinningFactionId: return
+	    - m_fVictoryTimestamp: return
+	    - m_fVictoryPauseTimestamp: return
+	    - m_bIsTutorial: return
+	    - m_bMatchOver: return
+	    - m_bStarted: return
+	    - m_iCallsignOffset: return
+	    - true: return
+	    - activeBasesTotal: int
+	    - true: return
+	    - baseName: string
+	    - campaignBase: SCR_CampaignMilitaryBaseComponent
+	    - listIndex: int
+	    - lowestVictoryTimestamp: WorldTimestamp
+	    - blockPauseTimestamp: WorldTimestamp
+	    - actualVictoryTimestamp: WorldTimestamp
+	    - winner: SCR_CampaignFaction
+	    - m_sINDFORFactionKey: return
+	    - m_sBLUFORFactionKey: return
+	    - m_sOPFORFactionKey: return
+	    - null: return
+	    - m_bIgnoreMinimumVehicleRank: return
+	    - xp: int
+	    - count: int
+	    - count: return
+	    - null: return
+	    - null: return
+	    - clientData: SCR_CampaignClientData
+	    - clientData: return
+	    - damageManager: DamageManagerComponent
+	    - radio: SCR_ERadioMsg
+	    - key: int
+	    - spawnPointParentBase: SCR_CampaignMilitaryBaseComponent
+	    - false: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - false: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - false: return
+	    - clientData: SCR_CampaignClientData
+	    - fuelDepotNearby: bool
+	    - truckBed: IEntity
+	    - suppliesComponent: SCR_CampaignSuppliesComponent
+	    - mobileAssemblyComponent: SCR_CampaignMobileAssemblyComponent
+	    - eventHandlerManager: EventHandlerManagerComponent
+	    + GetOnFactionAssignedLocalPlayer() ScriptInvoker
+	    + GetOnStarted() ScriptInvoker
+	    + GetOnMatchSituationChanged() ScriptInvoker
+	    + GetOnCallsignOffsetChanged() ScriptInvoker
+	    + GetSuppliesReplenishThreshold() int
+	    + GetQuickSuppliesReplenishThreshold() int
+	    + GetQuickSuppliesReplenishMultiplier() float
+	    + GetSuppliesArrivalInterval() int
+	    + GetRegularSuppliesIncome() int
+	    + GetRegularSuppliesIncomeBase() int
+	    + GetRegularSuppliesIncomeExtra() int
+	    + GetSupplyDepotIconThreshold() int
+	    + GetBaseManager() SCR_CampaignMilitaryBaseManager
+	    + GetVictoryTimer() float
+	    + GetControlPointTreshold() int
+	    + GetMinStartingSupplies() int
+	    + GetMaxStartingSupplies() int
+	    + GetStartingSuppliesInterval() int
+	    + WasRemnantsStateLoaded() bool
+	    + IsSessionLoadInProgress() bool
+	    + GetSeekDestroyWaypointPrefab() ResourceName
+	    + GetWinningFactionId() int
+	    + GetVictoryTimestamp() WorldTimestamp
+	    + GetVictoryPauseTimestamp() WorldTimestamp
+	    + IsTutorial() bool
+	    + GetIsMatchOver() bool
+	    + HasStarted() bool
+	    + GetCallsignOffset() int
+	    + OnMatchSituationChanged() void
+	    + SetControlPointsHeld(SCR_CampaignFaction faction, int newCount) void
+	    + SetPrimaryTarget(notnull SCR_CampaignFaction faction, SCR_CampaignMilitaryBaseComponent target) void
+	    + BroadcastMHQFeedback(SCR_EMobileAssemblyStatus msgID, int playerID, int factionID) void
+	    + RpcDo_BroadcastMHQFeedback(SCR_EMobileAssemblyStatus msgID, int playerID, int factionID) void
+	    + RequestStart() void
+	    + OnStarted() void
+	    + OnCallsignOffsetChanged() void
+	    + GetFactionKeyByEnum(SCR_ECampaignFaction faction) FactionKey
+	    + GetFactionByEnum(SCR_ECampaignFaction faction) SCR_CampaignFaction
+	    + IsProxy() bool
+	    + CanRequestVehicleWithoutRank() bool
+	    + StoreLoadedData(notnull SCR_CampaignStruct struct) void
+	    + StoreRemnantsStates(out notnull array outEntries) void
+	    + LoadRemnantsStates(notnull array entries) void
+	    + SetIsTutorial(bool isTutorial) void
+	    + LoadClientData(notnull array data) void
+	    + WriteAllClientsData() void
+	    + SpawnMobileHQ(notnull SCR_CampaignFaction faction, vector pos, vector rot) void
+	    + GetClientsData(notnull out array dataArray) int
+	    + GetClientData(int playerId) SCR_CampaignClientData
+	    + OnSpawnPointFactionAssigned(SCR_SpawnPoint spawnpoint) void
+	    + OnEntityRequested(notnull IEntity spawnedEntity, IEntity user, SCR_Faction faction, SCR_MilitaryBaseLogicComponent service) void
+	    + SCR_GameModeCampaign(IEntitySource src, IEntity parent) void
+    }
+    class SCR_GameModeCampaign {
+	    - m_OnFactionAssignedLocalPlayer: return
+	    - m_OnStarted: return
+	    - m_OnMatchSituationChanged: return
+	    - m_OnCallsignOffsetChanged: return
+	    - m_iSuppliesReplenishThreshold: return
+	    - m_iQuickSuppliesReplenishThreshold: return
+	    - m_fQuickSuppliesReplenishMultiplier: return
+	    - m_iSuppliesArrivalInterval: return
+	    - m_iRegularSuppliesIncome: return
+	    - m_iRegularSuppliesIncomeBase: return
+	    - m_iRegularSuppliesIncomeExtra: return
+	    - m_iSupplyDepotIconThreshold: return
+	    - m_BaseManager: return
+	    - m_fVictoryTimer: return
+	    - m_iControlPointsThreshold: return
+	    - m_iMinStartingSupplies: return
+	    - m_iMaxStartingSupplies: return
+	    - m_iStartingSuppliesInterval: return
+	    - m_bRemnantsStateLoaded: return
+	    - m_bIsSessionLoadInProgress: return
+	    - m_sSeekDestroyWaypointPrefab: return
+	    - m_iWinningFactionId: return
+	    - m_fVictoryTimestamp: return
+	    - m_fVictoryPauseTimestamp: return
+	    - m_bIsTutorial: return
+	    - m_bMatchOver: return
+	    - m_bStarted: return
+	    - m_iCallsignOffset: return
+	    - true: return
+	    - activeBasesTotal: int
+	    - true: return
+	    - baseName: string
+	    - campaignBase: SCR_CampaignMilitaryBaseComponent
+	    - listIndex: int
+	    - lowestVictoryTimestamp: WorldTimestamp
+	    - blockPauseTimestamp: WorldTimestamp
+	    - actualVictoryTimestamp: WorldTimestamp
+	    - winner: SCR_CampaignFaction
+	    - m_sINDFORFactionKey: return
+	    - m_sBLUFORFactionKey: return
+	    - m_sOPFORFactionKey: return
+	    - null: return
+	    - m_bIgnoreMinimumVehicleRank: return
+	    - xp: int
+	    - count: int
+	    - count: return
+	    - null: return
+	    - null: return
+	    - clientData: SCR_CampaignClientData
+	    - clientData: return
+	    - damageManager: DamageManagerComponent
+	    - radio: SCR_ERadioMsg
+	    - key: int
+	    - spawnPointParentBase: SCR_CampaignMilitaryBaseComponent
+	    - false: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - false: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - true: return
+	    - false: return
+	    - clientData: SCR_CampaignClientData
+	    - fuelDepotNearby: bool
+	    - truckBed: IEntity
+	    - suppliesComponent: SCR_CampaignSuppliesComponent
+	    - mobileAssemblyComponent: SCR_CampaignMobileAssemblyComponent
+	    - eventHandlerManager: EventHandlerManagerComponent
+	    + GetOnFactionAssignedLocalPlayer() ScriptInvoker
+	    + GetOnStarted() ScriptInvoker
+	    + GetOnMatchSituationChanged() ScriptInvoker
+	    + GetOnCallsignOffsetChanged() ScriptInvoker
+	    + GetSuppliesReplenishThreshold() int
+	    + GetQuickSuppliesReplenishThreshold() int
+	    + GetQuickSuppliesReplenishMultiplier() float
+	    + GetSuppliesArrivalInterval() int
+	    + GetRegularSuppliesIncome() int
+	    + GetRegularSuppliesIncomeBase() int
+	    + GetRegularSuppliesIncomeExtra() int
+	    + GetSupplyDepotIconThreshold() int
+	    + GetBaseManager() SCR_CampaignMilitaryBaseManager
+	    + GetVictoryTimer() float
+	    + GetControlPointTreshold() int
+	    + GetMinStartingSupplies() int
+	    + GetMaxStartingSupplies() int
+	    + GetStartingSuppliesInterval() int
+	    + WasRemnantsStateLoaded() bool
+	    + IsSessionLoadInProgress() bool
+	    + GetSeekDestroyWaypointPrefab() ResourceName
+	    + GetWinningFactionId() int
+	    + GetVictoryTimestamp() WorldTimestamp
+	    + GetVictoryPauseTimestamp() WorldTimestamp
+	    + IsTutorial() bool
+	    + GetIsMatchOver() bool
+	    + HasStarted() bool
+	    + GetCallsignOffset() int
+	    + OnMatchSituationChanged() void
+	    + SetControlPointsHeld(SCR_CampaignFaction faction, int newCount) void
+	    + SetPrimaryTarget(notnull SCR_CampaignFaction faction, SCR_CampaignMilitaryBaseComponent target) void
+	    + BroadcastMHQFeedback(SCR_EMobileAssemblyStatus msgID, int playerID, int factionID) void
+	    + RpcDo_BroadcastMHQFeedback(SCR_EMobileAssemblyStatus msgID, int playerID, int factionID) void
+	    + RequestStart() void
+	    + OnStarted() void
+	    + OnCallsignOffsetChanged() void
+	    + GetFactionKeyByEnum(SCR_ECampaignFaction faction) FactionKey
+	    + GetFactionByEnum(SCR_ECampaignFaction faction) SCR_CampaignFaction
+	    + IsProxy() bool
+	    + CanRequestVehicleWithoutRank() bool
+	    + StoreLoadedData(notnull SCR_CampaignStruct struct) void
+	    + StoreRemnantsStates(out notnull array outEntries) void
+	    + LoadRemnantsStates(notnull array entries) void
+	    + SetIsTutorial(bool isTutorial) void
+	    + LoadClientData(notnull array data) void
+	    + WriteAllClientsData() void
+	    + SpawnMobileHQ(notnull SCR_CampaignFaction faction, vector pos, vector rot) void
+	    + GetClientsData(notnull out array dataArray) int
+	    + GetClientData(int playerId) SCR_CampaignClientData
+	    + OnSpawnPointFactionAssigned(SCR_SpawnPoint spawnpoint) void
+	    + OnEntityRequested(notnull IEntity spawnedEntity, IEntity user, SCR_Faction faction, SCR_MilitaryBaseLogicComponent service) void
+	    + SCR_GameModeCampaign(IEntitySource src, IEntity parent) void
+    }
+    class SCR_GameModeEditorClass {
+	    - m_GameMasterTarget: return
+	    + GetGameMasterTarget() EGameModeEditorTarget
+	    + SCR_GameModeEditor(IEntitySource src, IEntity parent) void
+    }
+    class SCR_GameModeEditor {
+	    - m_GameMasterTarget: return
+	    + GetGameMasterTarget() EGameModeEditorTarget
+	    + SCR_GameModeEditor(IEntitySource src, IEntity parent) void
+    }
+    class SCR_GameModeEndData {
+	    - data: return
+	    - data: return
+	    - m_iEndReason: return
+	    - true: return
+	    - winnerCount: int
+	    - tmp: int
+	    - winnerFactionCount: int
+	    - true: return
+	    - endReason: int
+	    - tmp: int
+	    - winnerCount: int
+	    - factionWinnerCount: int
+	    - endReason: int
+	    - winnerCount: int
+	    - tmp: int
+	    - factionWinnerCount: int
+	    - true: return
+	    - lhsReason: int
+	    - rhsReason: int
+	    - false: return
+	    - lCnt: int
+	    - rCnt: int
+	    - false: return
+	    - lTmp: int
+	    - rTmp: int
+	    - false: return
+	    - false: return
+	    - false: return
+	    - true: return
+	    - false: return
+	    - false: return
+	    - false: return
+	    - false: return
+	    - false: return
+	    - true: return
+	    + GetEndReason() int
+	    + GetWinnerId() int
+	    + GetWinnerIds(out notnull array winnerIds) void
+	    + GetWinnerFactionId() int
+	    + GetFactionWinnerIds(out notnull array winnerIds) void
+    }
+    class SCR_GameModeLastStandClass {
+	    - m_TimeoutBetweenWaves: float
+	    - m_InitialGroupsCount: int
+	    - m_AddedGroupsPerRound: int
+	    - m_GroupType: ResourceName
+	    - m_iGroupsToSpawn: int
+	    - m_iRoundNumber: int
+	    - m_wRoot: Widget
+	    - m_wText: TextWidget
+	    - m_fCurrentTimeout: float
+	    - m_AttackWP: AIWaypoint
+	    - faction: FactionKey
+	    - spawnPoint: SCR_SpawnPoint
+	    + ShowHint(string text, float showTime) void
+	    + HideHint() void
+	    + SpawnEnemies(int round) void
+    }
+    class SCR_GameModeLastStand {
+	    - m_TimeoutBetweenWaves: float
+	    - m_InitialGroupsCount: int
+	    - m_AddedGroupsPerRound: int
+	    - m_GroupType: ResourceName
+	    - m_iGroupsToSpawn: int
+	    - m_iRoundNumber: int
+	    - m_wRoot: Widget
+	    - m_wText: TextWidget
+	    - m_fCurrentTimeout: float
+	    - m_AttackWP: AIWaypoint
+	    - faction: FactionKey
+	    - spawnPoint: SCR_SpawnPoint
+	    + ShowHint(string text, float showTime) void
+	    + HideHint() void
+	    + SpawnEnemies(int round) void
+    }
+    class SCR_GameModeSectorControlClass {
+    }
+    class SCR_GameModeSectorControl {
+    }
+    class SCR_NightModeGameModeComponentClass {
+	    - moonphase: float
+	    - m_bLocalEditorNightModeEnabled: return
+	    - m_bAllowGlobalNightMode: return
+	    - m_bGlobalNightModeEnabled: return
+	    - m_OnLocalEditorNightModeEnabledChanged: return
+	    - m_OnGlobalNightModeEnabledChanged: return
+	    - m_OnNightModeEnabledChanged: return
+	    - true: return
+	    - globalNightModeEnabled: bool
+	    - true: return
+	    + IsLocalEditorNightModeEnabled() bool
+	    + EnableLocalEditorNightMode(bool enable, bool playSound = true) void
+	    + IsGlobalNightModeAllowed() bool
+	    + IsGlobalNightModeEnabled() bool
+	    + EnableGlobalNightMode(bool enable, int nightModeChangerPlayerID = -1) void
+	    + IsNightModeEnabled() bool
+	    + IsLocalEditorNightModeEnabled() return
+	    + CanEnableNightMode() bool
+	    + GetOnLocalEditorNightModeEnabledChanged() ScriptInvokerBool
+	    + GetOnGlobalNightModeEnabledChanged() ScriptInvokerBool
+	    + GetOnNightModeEnabledChanged() ScriptInvokerBool
+    }
+    class SCR_NightModeGameModeComponent {
+	    - moonphase: float
+	    - m_bLocalEditorNightModeEnabled: return
+	    - m_bAllowGlobalNightMode: return
+	    - m_bGlobalNightModeEnabled: return
+	    - m_OnLocalEditorNightModeEnabledChanged: return
+	    - m_OnGlobalNightModeEnabledChanged: return
+	    - m_OnNightModeEnabledChanged: return
+	    - true: return
+	    - globalNightModeEnabled: bool
+	    - true: return
+	    + IsLocalEditorNightModeEnabled() bool
+	    + EnableLocalEditorNightMode(bool enable, bool playSound = true) void
+	    + IsGlobalNightModeAllowed() bool
+	    + IsGlobalNightModeEnabled() bool
+	    + EnableGlobalNightMode(bool enable, int nightModeChangerPlayerID = -1) void
+	    + IsNightModeEnabled() bool
+	    + IsLocalEditorNightModeEnabled() return
+	    + CanEnableNightMode() bool
+	    + GetOnLocalEditorNightModeEnabledChanged() ScriptInvokerBool
+	    + GetOnGlobalNightModeEnabledChanged() ScriptInvokerBool
+	    + GetOnNightModeEnabledChanged() ScriptInvokerBool
+    }
+    class SCR_NotificationSenderComponentClass {
+	    - victimFaction: Faction
+	    - killerRplId: RplId
+	    - editorManager: SCR_EditorManagerEntity
+	    - groupInt: KickCauseGroup2
+	    - reasonInt: int
+	    - m_iKillFeedType: return
+	    - m_iReceiveKillFeedType: return
+	    - true: return
+	    - killFeedType: EKillFeedType
+	    - receiveKillFeedType: EKillFeedReceiveType
+	    - true: return
+	    - m_iKillfeedType: return
+	    - m_sKillfeedTypeName: return
+	    - m_iKillfeedreceiveType: return
+	    - m_sKillfeedReceiveTypeName: return
+	    + OnWeatherChangedNotification(int playerID) void
+	    + GetKillFeedTypeNames(notnull array killFeedTypeNames) int
+	    + GetKillFeedReceiveTypeNames(notnull array killFeedReceiveTypeNames) int
+	    + GetKillFeedType() EKillFeedType
+	    + SetKillFeedType(EKillFeedType killFeedType, int playerNotificationId = -1) void
+	    + GetReceiveKillFeedType() EKillFeedReceiveType
+	    + SetReceiveKillFeedType(EKillFeedReceiveType receiveKillFeedType, int playerNotificationId = -1) void
+	    + GetKillfeedType() EKillFeedType
+	    + GetName() string
+	    + GetKillfeedReceiveType() EKillFeedType
+	    + GetName() string
+    }
+    class SCR_NotificationSenderComponent {
+	    - victimFaction: Faction
+	    - killerRplId: RplId
+	    - editorManager: SCR_EditorManagerEntity
+	    - groupInt: KickCauseGroup2
+	    - reasonInt: int
+	    - m_iKillFeedType: return
+	    - m_iReceiveKillFeedType: return
+	    - true: return
+	    - killFeedType: EKillFeedType
+	    - receiveKillFeedType: EKillFeedReceiveType
+	    - true: return
+	    - m_iKillfeedType: return
+	    - m_sKillfeedTypeName: return
+	    - m_iKillfeedreceiveType: return
+	    - m_sKillfeedReceiveTypeName: return
+	    + OnWeatherChangedNotification(int playerID) void
+	    + GetKillFeedTypeNames(notnull array killFeedTypeNames) int
+	    + GetKillFeedReceiveTypeNames(notnull array killFeedReceiveTypeNames) int
+	    + GetKillFeedType() EKillFeedType
+	    + SetKillFeedType(EKillFeedType killFeedType, int playerNotificationId = -1) void
+	    + GetReceiveKillFeedType() EKillFeedReceiveType
+	    + SetReceiveKillFeedType(EKillFeedReceiveType receiveKillFeedType, int playerNotificationId = -1) void
+	    + GetKillfeedType() EKillFeedType
+	    + GetName() string
+	    + GetKillfeedReceiveType() EKillFeedType
+	    + GetName() string
+    }
+    class SCR_NotificationKillfeedTypeName {
+	    - m_iKillfeedType: return
+	    - m_sKillfeedTypeName: return
+	    - m_iKillfeedreceiveType: return
+	    - m_sKillfeedReceiveTypeName: return
+	    + GetKillfeedType() EKillFeedType
+	    + GetName() string
+	    + GetKillfeedReceiveType() EKillFeedType
+	    + GetName() string
+    }
+    class SCR_NotificationKillfeedreceiveTypeName {
+	    - m_iKillfeedreceiveType: return
+	    - m_sKillfeedReceiveTypeName: return
+	    + GetKillfeedReceiveType() EKillFeedType
+	    + GetName() string
+    }
+    class SCR_PostGameGameModeStateComponentClass {
+	    - false: return
+	    - true: return
+    }
+    class SCR_PostGameGameModeStateComponent {
+	    - false: return
+	    - true: return
+    }
+    class SCR_PreGameGameModeStateComponentClass {
+	    - m_fDuration: return
+    }
+    class SCR_PreGameGameModeStateComponent {
+	    - m_fDuration: return
+    }
+    class UntitledClass {
+    }
+    SCR_BaseGameModeClass -- UntitledClass

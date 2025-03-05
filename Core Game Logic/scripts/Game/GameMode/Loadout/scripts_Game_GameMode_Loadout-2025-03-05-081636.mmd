@@ -1,0 +1,609 @@
+classDiagram
+
+    class SCR_ArsenalPlayerLoadout {
+        - loadout: string
+        - requires: return
+        - faction: SCR_Faction
+        - generator: SCR_ResourceGenerator
+        - itemCost: float
+        - arsenalData: SCR_ArsenalItem
+        - nonArsenalData: SCR_NonArsenalItemCostCatalogData
+        - attachedEntity: IEntity
+        - attachmentPrefab: ResourceName
+        - attachment: AttachmentSlotComponent
+        - itemCost: return
+        - m_eArsenalTypesEnabled: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - false: return
+        - m_OnArsenalTypeEnabledChanged: return
+        - m_ArsenalSaveTypeInfoHolder: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - m_eArsenalGameModeType: return
+        - unknown: return
+        - 0: return
+        - m_OnArsenalGameModeTypeChanged: return
+        - m_LoadoutSaveBlackListHolder: return
+        - false: return
+        - false: return
+        - m_OnPlayerLoadoutUpdated: return
+        - 0: return
+        - m_fLoadoutSpawnSupplyCostMultiplier: return
+        - m_fLoadoutSpawnSupplyCostMultiplier: return
+        - m_OnLoadoutSpawnSupplyCostMultiplierChanged: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - supplyCost: float
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - true: return
+        - false: return
+        - arsenalInventory: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - true: return
+        - false: return
+        - true: return
+        - true: return
+        - false: return
+        - scrFaction: SCR_Faction
+        - itemCatalog: SCR_EntityCatalog
+        - false: return
+        - true: return
+        - prefabData: EntityPrefabData
+        - itemRplComponent: RplComponent
+        - resourceName: ResourceName
+        - itemFound: bool
+        - prefabName: ResourceName
+        - prefabName: ResourceName
+        - loadoutData: return
+        - itemsCount: int
+        - prefab: ResourceName
+        - unknown: return
+        - m_eArsenalGameModeType: SCR_EArsenalGameModeType
+        + SCR_ArsenalManagerComponent_OnPlayerLoadoutChanged(int playerId, bool hasValidLoadout) void
+        + GetEnabledArsenalTypes() SCR_EArsenalTypes
+        + IsArsenalTypeEnabled(SCR_EArsenalTypes arsenalType) bool
+        + SetEnabledArsenalTypes(SCR_EArsenalTypes newEnabledArsenalTypes, int playerID = -1) void
+        + GetOnArsenalTypeEnabledChanged() ScriptInvokerInt
+        + GetArsenalSaveTypeInfoHolder() SCR_ArsenalSaveTypeInfoHolder
+        + GetArsenalGameModeType() SCR_EArsenalGameModeType
+        + SetArsenalGameModeType_S(SCR_EArsenalGameModeType arsenalGameModeType, int playerID = 0) void
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+        + GetOnArsenalGameModeTypeChanged() ScriptInvokerInt
+        + GetLoadoutSaveBlackListHolder() SCR_LoadoutSaveBlackListHolder
+        + SetLoadoutBlackListActiveStates(notnull array<bool> orderedActiveStates, bool clearExistingLoadouts, int editorPlayerIdClearedLoadout = -1) void
+        + GetLocalPlayerLoadoutAvailable() bool
+        + GetPlayerArsenalLoadout(string playerUID, out SCR_ArsenalPlayerLoadout playerLoadout) bool
+        + SetLoadoutSpawnCostMultiplier_S(float multiplier, int playerID = 0) void
+        + GetCalculatedLoadoutSpawnSupplyCostMultiplier() float
+        + GetLoadoutSpawnSupplyCostMultiplier() float
+        + GetOnLoadoutSpawnSupplyCostMultiplierChanged() ScriptInvokerFloat
+        + SetPlayerArsenalLoadout(int playerId, GameEntity characterEntity, SCR_ArsenalComponent arsenalComponent, SCR_EArsenalSupplyCostType arsenalSupplyType) void
+        + loadoutData() SCR_PlayerLoadoutData
+        + clothingData() SCR_ClothingLoadoutData
+        + weaponData() SCR_WeaponLoadoutData
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+    }
+
+    class SCR_ArsenalManagerComponentClass {
+        - requires: return
+        - faction: SCR_Faction
+        - generator: SCR_ResourceGenerator
+        - itemCost: float
+        - arsenalData: SCR_ArsenalItem
+        - nonArsenalData: SCR_NonArsenalItemCostCatalogData
+        - attachedEntity: IEntity
+        - attachmentPrefab: ResourceName
+        - attachment: AttachmentSlotComponent
+        - itemCost: return
+        - m_eArsenalTypesEnabled: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - false: return
+        - m_OnArsenalTypeEnabledChanged: return
+        - m_ArsenalSaveTypeInfoHolder: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - m_eArsenalGameModeType: return
+        - unknown: return
+        - 0: return
+        - m_OnArsenalGameModeTypeChanged: return
+        - m_LoadoutSaveBlackListHolder: return
+        - false: return
+        - false: return
+        - m_OnPlayerLoadoutUpdated: return
+        - 0: return
+        - m_fLoadoutSpawnSupplyCostMultiplier: return
+        - m_fLoadoutSpawnSupplyCostMultiplier: return
+        - m_OnLoadoutSpawnSupplyCostMultiplierChanged: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - supplyCost: float
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - true: return
+        - false: return
+        - arsenalInventory: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - true: return
+        - false: return
+        - true: return
+        - true: return
+        - false: return
+        - scrFaction: SCR_Faction
+        - itemCatalog: SCR_EntityCatalog
+        - false: return
+        - true: return
+        - prefabData: EntityPrefabData
+        - itemRplComponent: RplComponent
+        - resourceName: ResourceName
+        - itemFound: bool
+        - prefabName: ResourceName
+        - prefabName: ResourceName
+        - loadoutData: return
+        - itemsCount: int
+        - prefab: ResourceName
+        - unknown: return
+        - m_eArsenalGameModeType: SCR_EArsenalGameModeType
+        + GetEnabledArsenalTypes() SCR_EArsenalTypes
+        + IsArsenalTypeEnabled(SCR_EArsenalTypes arsenalType) bool
+        + SetEnabledArsenalTypes(SCR_EArsenalTypes newEnabledArsenalTypes, int playerID = -1) void
+        + GetOnArsenalTypeEnabledChanged() ScriptInvokerInt
+        + GetArsenalSaveTypeInfoHolder() SCR_ArsenalSaveTypeInfoHolder
+        + GetArsenalGameModeType() SCR_EArsenalGameModeType
+        + SetArsenalGameModeType_S(SCR_EArsenalGameModeType arsenalGameModeType, int playerID = 0) void
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+        + GetOnArsenalGameModeTypeChanged() ScriptInvokerInt
+        + GetLoadoutSaveBlackListHolder() SCR_LoadoutSaveBlackListHolder
+        + SetLoadoutBlackListActiveStates(notnull array<bool> orderedActiveStates, bool clearExistingLoadouts, int editorPlayerIdClearedLoadout = -1) void
+        + GetLocalPlayerLoadoutAvailable() bool
+        + GetPlayerArsenalLoadout(string playerUID, out SCR_ArsenalPlayerLoadout playerLoadout) bool
+        + SetLoadoutSpawnCostMultiplier_S(float multiplier, int playerID = 0) void
+        + GetCalculatedLoadoutSpawnSupplyCostMultiplier() float
+        + GetLoadoutSpawnSupplyCostMultiplier() float
+        + GetOnLoadoutSpawnSupplyCostMultiplierChanged() ScriptInvokerFloat
+        + SetPlayerArsenalLoadout(int playerId, GameEntity characterEntity, SCR_ArsenalComponent arsenalComponent, SCR_EArsenalSupplyCostType arsenalSupplyType) void
+        + loadoutData() SCR_PlayerLoadoutData
+        + clothingData() SCR_ClothingLoadoutData
+        + weaponData() SCR_WeaponLoadoutData
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+    }
+
+    class SCR_ArsenalManagerComponent {
+        - faction: SCR_Faction
+        - generator: SCR_ResourceGenerator
+        - itemCost: float
+        - arsenalData: SCR_ArsenalItem
+        - nonArsenalData: SCR_NonArsenalItemCostCatalogData
+        - attachedEntity: IEntity
+        - attachmentPrefab: ResourceName
+        - attachment: AttachmentSlotComponent
+        - itemCost: return
+        - m_eArsenalTypesEnabled: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - false: return
+        - m_OnArsenalTypeEnabledChanged: return
+        - m_ArsenalSaveTypeInfoHolder: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - m_eArsenalGameModeType: return
+        - unknown: return
+        - 0: return
+        - m_OnArsenalGameModeTypeChanged: return
+        - m_LoadoutSaveBlackListHolder: return
+        - false: return
+        - false: return
+        - m_OnPlayerLoadoutUpdated: return
+        - 0: return
+        - m_fLoadoutSpawnSupplyCostMultiplier: return
+        - m_fLoadoutSpawnSupplyCostMultiplier: return
+        - m_OnLoadoutSpawnSupplyCostMultiplierChanged: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - supplyCost: float
+        - 0: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - true: return
+        - false: return
+        - arsenalInventory: SCR_ArsenalInventoryStorageManagerComponent
+        - true: return
+        - true: return
+        - false: return
+        - true: return
+        - true: return
+        - false: return
+        - scrFaction: SCR_Faction
+        - itemCatalog: SCR_EntityCatalog
+        - false: return
+        - true: return
+        - prefabData: EntityPrefabData
+        - itemRplComponent: RplComponent
+        - resourceName: ResourceName
+        - itemFound: bool
+        - prefabName: ResourceName
+        - prefabName: ResourceName
+        - loadoutData: return
+        - itemsCount: int
+        - prefab: ResourceName
+        - unknown: return
+        - m_eArsenalGameModeType: SCR_EArsenalGameModeType
+        + GetEnabledArsenalTypes() SCR_EArsenalTypes
+        + IsArsenalTypeEnabled(SCR_EArsenalTypes arsenalType) bool
+        + SetEnabledArsenalTypes(SCR_EArsenalTypes newEnabledArsenalTypes, int playerID = -1) void
+        + GetOnArsenalTypeEnabledChanged() ScriptInvokerInt
+        + GetArsenalSaveTypeInfoHolder() SCR_ArsenalSaveTypeInfoHolder
+        + GetArsenalGameModeType() SCR_EArsenalGameModeType
+        + SetArsenalGameModeType_S(SCR_EArsenalGameModeType arsenalGameModeType, int playerID = 0) void
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+        + GetOnArsenalGameModeTypeChanged() ScriptInvokerInt
+        + GetLoadoutSaveBlackListHolder() SCR_LoadoutSaveBlackListHolder
+        + SetLoadoutBlackListActiveStates(notnull array<bool> orderedActiveStates, bool clearExistingLoadouts, int editorPlayerIdClearedLoadout = -1) void
+        + GetLocalPlayerLoadoutAvailable() bool
+        + GetPlayerArsenalLoadout(string playerUID, out SCR_ArsenalPlayerLoadout playerLoadout) bool
+        + SetLoadoutSpawnCostMultiplier_S(float multiplier, int playerID = 0) void
+        + GetCalculatedLoadoutSpawnSupplyCostMultiplier() float
+        + GetLoadoutSpawnSupplyCostMultiplier() float
+        + GetOnLoadoutSpawnSupplyCostMultiplierChanged() ScriptInvokerFloat
+        + SetPlayerArsenalLoadout(int playerId, GameEntity characterEntity, SCR_ArsenalComponent arsenalComponent, SCR_EArsenalSupplyCostType arsenalSupplyType) void
+        + loadoutData() SCR_PlayerLoadoutData
+        + clothingData() SCR_ClothingLoadoutData
+        + weaponData() SCR_WeaponLoadoutData
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+    }
+
+    class SCR_ArsenalGameModeUIDataHolder {
+        - unknown: return
+        - m_eArsenalGameModeType: SCR_EArsenalGameModeType
+        + GetArsenalGameModeUIInfo(SCR_EArsenalGameModeType arsenalGameModeType) SCR_UIInfo
+        + GetArsenalGameModeUIInfoList(inout notnull array<SCR_ArsenalGameModeUIData> arsenalGameModeTypeUIInfoList) int
+    }
+
+    class SCR_ArsenalGameModeUIData {
+        - m_eArsenalGameModeType: SCR_EArsenalGameModeType
+    }
+
+    class SCR_ArsenalSaveTypeInfoHolder {
+        - null: return
+        - true: return
+        - false: return
+        - m_eArsenalSaveType: return
+        - m_UIInfo: return
+        + GetArsenalSaveTypeInfoList(out notnull array<SCR_ArsenalSaveTypeInfo> arsenalSaveTypeUIInfoList) int
+        + GetUIInfoOfType(SCR_EArsenalSaveType saveTypeToCheck) SCR_ArsenalSaveTypeUIInfo
+        + HasSaveType(SCR_EArsenalSaveType saveTypeToCheck) bool
+        + GetSaveType() SCR_EArsenalSaveType
+        + GetUIInfo() SCR_ArsenalSaveTypeUIInfo
+    }
+
+    class SCR_ArsenalSaveTypeInfo {
+        - m_eArsenalSaveType: return
+        - m_UIInfo: return
+        + GetSaveType() SCR_EArsenalSaveType
+        + GetUIInfo() SCR_ArsenalSaveTypeUIInfo
+    }
+
+    class SCR_BasePlayerLoadout {
+        - true: return
+        - true: return
+        + GetLoadoutResource() ResourceName
+        + GetLoadoutName() string
+        + GetLoadoutImageResource() ResourceName
+        + IsLoadoutAvailable(int playerId) bool
+        + IsLoadoutAvailableClient() bool
+        + OnLoadoutSpawned(GenericEntity pOwner, int playerId) void
+    }
+
+    class SCR_LoadoutManagerClass {
+        - info: SCR_PlayerLoadoutInfo
+        - null: return
+        - 0: return
+        - playerCount: int
+        - playerCount: return
+        - previousCount: int
+        - previousLoadoutIndex: int
+        - count: int
+        - res: ResourceName
+        - foundInfo: SCR_PlayerLoadoutInfo
+        - previousCount: int
+        - previousCount: int
+        - previousCount: int
+        - true: return
+        - m_aPlayerLoadouts: return
+        - 0: return
+        - i: return
+        - null: return
+        - candidate: return
+        - null: return
+        - null: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - outCount: return
+        - 0: return
+        - outCount: return
+        - null: return
+        - m_OnMappedPlayerLoadoutInfoChanged: return
+        + GetPlayerLoadout(int playerId) SCR_BasePlayerLoadout
+        + GetLoadoutByIndex(loadoutIndex) return
+        + GetLocalPlayerLoadout() SCR_BasePlayerLoadout
+        + GetPlayerLoadout(localPlayerId) return
+        + GetLoadoutPlayerCount(SCR_BasePlayerLoadout loadout) int
+        + UpdatePlayerLoadout_S(SCR_PlayerLoadoutComponent playerLoadoutComponent) void
+        + CanAssignLoadout_S(SCR_PlayerLoadoutComponent playerLoadoutComponent, SCR_BasePlayerLoadout loadout) bool
+        + GetLoadoutCount() int
+        + GetLoadoutIndex(SCR_BasePlayerLoadout loadout) int
+        + GetLoadoutByIndex(int index) SCR_BasePlayerLoadout
+        + GetLoadoutByName(string name) SCR_BasePlayerLoadout
+        + GetRandomFactionLoadout(Faction faction) SCR_BasePlayerLoadout
+        + GetPlayerLoadoutsByFaction(Faction faction, out notnull array<ref SCR_BasePlayerLoadout> outLoadouts) int
+        + GetPlayerLoadouts(out notnull array<SCR_BasePlayerLoadout> outLoadouts) int
+        + GetRandomLoadoutIndex(Faction faction) int
+        + GetRandomLoadoutIndex() int
+        + GetRandomLoadout() SCR_BasePlayerLoadout
+        + GetOnMappedPlayerLoadoutInfoChanged() ScriptInvoker
+        + SCR_LoadoutManager(IEntitySource src, IEntity parent) void
+    }
+
+    class SCR_LoadoutManager {
+        - info: SCR_PlayerLoadoutInfo
+        - null: return
+        - 0: return
+        - playerCount: int
+        - playerCount: return
+        - previousCount: int
+        - previousLoadoutIndex: int
+        - count: int
+        - res: ResourceName
+        - foundInfo: SCR_PlayerLoadoutInfo
+        - previousCount: int
+        - previousCount: int
+        - previousCount: int
+        - true: return
+        - m_aPlayerLoadouts: return
+        - 0: return
+        - i: return
+        - null: return
+        - candidate: return
+        - null: return
+        - null: return
+        - 0: return
+        - 0: return
+        - 0: return
+        - outCount: return
+        - 0: return
+        - outCount: return
+        - null: return
+        - m_OnMappedPlayerLoadoutInfoChanged: return
+        + GetPlayerLoadout(int playerId) SCR_BasePlayerLoadout
+        + GetLoadoutByIndex(loadoutIndex) return
+        + GetLocalPlayerLoadout() SCR_BasePlayerLoadout
+        + GetPlayerLoadout(localPlayerId) return
+        + GetLoadoutPlayerCount(SCR_BasePlayerLoadout loadout) int
+        + UpdatePlayerLoadout_S(SCR_PlayerLoadoutComponent playerLoadoutComponent) void
+        + CanAssignLoadout_S(SCR_PlayerLoadoutComponent playerLoadoutComponent, SCR_BasePlayerLoadout loadout) bool
+        + GetLoadoutCount() int
+        + GetLoadoutIndex(SCR_BasePlayerLoadout loadout) int
+        + GetLoadoutByIndex(int index) SCR_BasePlayerLoadout
+        + GetLoadoutByName(string name) SCR_BasePlayerLoadout
+        + GetRandomFactionLoadout(Faction faction) SCR_BasePlayerLoadout
+        + GetPlayerLoadoutsByFaction(Faction faction, out notnull array<ref SCR_BasePlayerLoadout> outLoadouts) int
+        + GetPlayerLoadouts(out notnull array<SCR_BasePlayerLoadout> outLoadouts) int
+        + GetRandomLoadoutIndex(Faction faction) int
+        + GetRandomLoadoutIndex() int
+        + GetRandomLoadout() SCR_BasePlayerLoadout
+        + GetOnMappedPlayerLoadoutInfoChanged() ScriptInvoker
+        + SCR_LoadoutManager(IEntitySource src, IEntity parent) void
+    }
+
+    class SCR_LoadoutSaveBlackListHolder {
+        - true: return
+        - true: return
+        - true: return
+        - false: return
+        - false: return
+        - false: return
+        - true: return
+        - true: return
+        - m_bEnabled: return
+        - m_bBlackListActive: return
+        - m_UIInfo: return
+        - m_eItemType: SCR_EArsenalItemType
+        - m_eItemMode: SCR_EArsenalItemMode
+        - m_bIgnoreItemMode: bool
+        - m_sSaveBlackListItem: ResourceName
+        - m_bEnabled: bool
+        + Init() void
+        + GetLoadoutSaveBlackLists(out notnull array<SCR_LoadoutSaveBlackList> loadoutSaveBlackLists) int
+        + GetBlackListsCount() int
+        + IsPrefabBlacklisted(ResourceName prefab) bool
+        + IsBlackListActive(int index) bool
+        + SetBlackListActive(int index, bool active) void
+        + GetOrderedBlackListsActive(out notnull array<bool> orderedBlackListActive) int
+        + SetOrderedBlackListsActive(notnull array<bool> orderedBlackListActive) void
+        + Init() bool
+        + IsEnabled() bool
+        + IsActive() bool
+        + SetActive(bool active) void
+        + DoesBlackListContaintPrefab(ResourceName prefab) bool
+        + GetUIInfo() SCR_UIInfo
+    }
+
+    class SCR_LoadoutSaveBlackList {
+        - false: return
+        - true: return
+        - true: return
+        - m_bEnabled: return
+        - m_bBlackListActive: return
+        - m_UIInfo: return
+        - m_eItemType: SCR_EArsenalItemType
+        - m_eItemMode: SCR_EArsenalItemMode
+        - m_bIgnoreItemMode: bool
+        - m_sSaveBlackListItem: ResourceName
+        - m_bEnabled: bool
+        + Init() bool
+        + IsEnabled() bool
+        + IsActive() bool
+        + SetActive(bool active) void
+        + DoesBlackListContaintPrefab(ResourceName prefab) bool
+        + GetUIInfo() SCR_UIInfo
+    }
+
+    class SCR_LoadoutSaveBlackListItemType {
+        - m_eItemType: SCR_EArsenalItemType
+        - m_eItemMode: SCR_EArsenalItemMode
+        - m_bIgnoreItemMode: bool
+        - m_sSaveBlackListItem: ResourceName
+        - m_bEnabled: bool
+    }
+
+    class SCR_LoadoutSaveBlackListItem {
+        - m_sSaveBlackListItem: ResourceName
+        - m_bEnabled: bool
+    }
+
+    class SCR_PlayerArsenalLoadout {
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - arsenalLoadout: SCR_ArsenalPlayerLoadout
+        - false: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - false: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - 0: return
+        - arsenalLoadout: SCR_ArsenalPlayerLoadout
+        - 0: return
+        - arsenalManager: SCR_ArsenalManagerComponent
+        - playerArsenalItems: SCR_ArsenalPlayerLoadout
+        - factionKey: string
+        + GetLoadoutSuppliesCost(playerUID) return
+    }
+
+    class SCR_FactionPlayerLoadout {
+        - m_sAffiliatedFaction: string
+        - m_sAffiliatedFaction: return
+        + GetFactionKey() FactionKey
+    }
+
+    class SCR_PlayerLoadout {
+        - m_sLoadoutName: string
+        - m_sLoadoutResource: ResourceName
+        - m_sLoadoutImage: ResourceName
+        - m_sLoadoutImage: return
+        - m_sLoadoutName: return
+    }
+
+    class SCR_WeaponLoadoutData {
+        - SlotIdx: int
+        - WeaponPrefab: ResourceName
+        - SlotIdx: int
+        - ClothingPrefab: ResourceName
+        - LoadoutCost: float
+        - FactionIndex: int
+        - true: return
+        - clothingCount: int
+        - resourceName: string
+        - weaponCount: int
+        - resourceName: string
+        - true: return
+        - clothingCount: int
+        - weaponCount: int
+        - clothingCount: int
+        - weaponCount: int
+        - true: return
+        - true: return
+        - true: return
+        + clothingData() SCR_ClothingLoadoutData
+        + weaponData() SCR_WeaponLoadoutData
+    }
+
+    class SCR_ClothingLoadoutData {
+        - SlotIdx: int
+        - ClothingPrefab: ResourceName
+        - LoadoutCost: float
+        - FactionIndex: int
+        - true: return
+        - clothingCount: int
+        - resourceName: string
+        - weaponCount: int
+        - resourceName: string
+        - true: return
+        - clothingCount: int
+        - weaponCount: int
+        - clothingCount: int
+        - weaponCount: int
+        - true: return
+        - true: return
+        - true: return
+        + clothingData() SCR_ClothingLoadoutData
+        + weaponData() SCR_WeaponLoadoutData
+    }
+
+    class SCR_PlayerLoadoutData {
+        - LoadoutCost: float
+        - FactionIndex: int
+        - true: return
+        - clothingCount: int
+        - resourceName: string
+        - weaponCount: int
+        - resourceName: string
+        - true: return
+        - clothingCount: int
+        - weaponCount: int
+        - clothingCount: int
+        - weaponCount: int
+        - true: return
+        - true: return
+        - true: return
+        + clothingData() SCR_ClothingLoadoutData
+        + weaponData() SCR_WeaponLoadoutData
+    }
+
+    class SCR_PlayerLoadoutInfo {
+        - m_iLoadoutIndex: return
+        - m_iPlayerId: return
+        - info: return
+        - true: return
+        - true: return
+        - true: return
+        + GetLoadoutIndex() int
+        + SetLoadoutIndex(int loadoutIndex) void
+        + GetPlayerId() int
+    }
+
