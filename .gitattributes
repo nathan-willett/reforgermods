@@ -1,0 +1,4 @@
+*.et filter=lfs diff=lfs merge=lfs -text
+*.edds filter=lfs diff=lfs merge=lfs -text
+*.xob filter=lfs diff=lfs merge=lfs -text
+*.layout filter=lfs diff=lfs merge=lfs -text

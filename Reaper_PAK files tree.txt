@@ -1,0 +1,870 @@
+C:\Users\natew\OneDrive\Desktop\extracted PAK>tree /f
+Folder PATH listing
+Volume serial number is 565B-19FF
+C:.
+└───data
+    ├───AI
+    │   ├───AIAgents
+    │   │       REAPER_ChimeraAIAgentHostage.et
+    │   │
+    │   └───BehaviorTrees
+    │       └───Chimera
+    │           └───Soldier
+    │                   CivilianMoveFromFire.bt
+    │                   HostageMove.bt
+    │                   PickupWeaponAndGear.bt
+    │
+    ├───Anims
+    │       bomb_case.pap
+    │       bomb_case.siga
+    │       EOtech_G33.pap
+    │       EOtech_G33.siga
+    │       Helmet_NVG.pap
+    │       Helmet_NVG.siga
+    │       laptop_display.pap
+    │       laptop_display.siga
+    │       searchlight.pap
+    │       searchlight.siga
+    │
+    └───Assets
+        ├───Character
+        │   ├───Female
+        │   │   │   reaper_female_body.xob
+        │   │   │   reaper_female_head.xob
+        │   │   │
+        │   │   └───Data
+        │   │           reaper_female_body.emat
+        │   │           reaper_female_body_BCR.edds
+        │   │           reaper_female_body_gloves.emat
+        │   │           reaper_female_body_gloves_A.edds
+        │   │           reaper_female_body_NMO.edds
+        │   │           reaper_female_body_wound.emat
+        │   │           reaper_female_body_wound_BCR.edds
+        │   │           reaper_female_body_wound_gloves.emat
+        │   │           reaper_female_eyeball.emat
+        │   │           reaper_female_eyeball_A.edds
+        │   │           reaper_female_eyeball_BCR.edds
+        │   │           reaper_female_eyeball_NMO.edds
+        │   │           reaper_female_eyegluss.emat
+        │   │           reaper_female_eyelash.emat
+        │   │           reaper_female_eyelash_A.edds
+        │   │           reaper_female_hair.emat
+        │   │           reaper_female_hair_A.edds
+        │   │           reaper_female_hair_BCE.edds
+        │   │           reaper_female_hair_NMO.edds
+        │   │           reaper_female_head01.emat
+        │   │           reaper_female_head01_wound.emat
+        │   │           reaper_female_teeth.emat
+        │   │           reaper_female_teeth_BCR.edds
+        │   │           reaper_female_toung.emat
+        │   │           reaper_female_toung_BCR.edds
+        │   │
+        │   └───Men
+        │           REAPER_BaseBody_Upgrade.xob
+        │
+        └───Characters
+            │   default_blood_VFX.edds
+            │
+            ├───AEM01_jacket
+            │   │   REAPER_AEM01.xob
+            │   │   REAPER_AEM01_item.xob
+            │   │
+            │   └───Data
+            │           AEM01_FDE.emat
+            │           AEM01_FDE_BCR.edds
+            │           AEM01_FDE_blood_BCR.edds
+            │           AEM01_GRAY.emat
+            │           AEM01_GRAY_BCR.edds
+            │           AEM01_GRAY_blood_BCR.edds
+            │           AEM01_MULTICAM.emat
+            │           AEM01_multicam_BCR.edds
+            │           AEM01_multicam_blood_BCR.edds
+            │           AEM01_NMO.edds
+            │           AEM01_OD.emat
+            │           AEM01_OD_BCR.edds
+            │           AEM01_OD_blood_BCR.edds
+            │
+            ├───Arcteryx_Gryphon
+            │   │   REAPER_Gryphon.xob
+            │   │   REAPER_Gryphon_item.xob
+            │   │
+            │   └───Data
+            │           Gryphon_BK.emat
+            │           Gryphon_BK_BCR.edds
+            │           Gryphon_BK_blood_BCR.edds
+            │           Gryphon_FDE.emat
+            │           Gryphon_FDE_BCR.edds
+            │           Gryphon_FDE_blood_BCR.edds
+            │           Gryphon_MCAM.emat
+            │           Gryphon_MCAM_BCR.edds
+            │           Gryphon_MCAM_blood_BCR.edds
+            │           Gryphon_NMO.edds
+            │
+            ├───Backpacks
+            │   │   backpack_banger_spawn.xob
+            │   │   backpack_banger_spawn_item.xob
+            │   │   backpack_compact.xob
+            │   │   backpack_compact_item.xob
+            │   │   backpack_defc.xob
+            │   │   backpack_defc_item.xob
+            │   │   backpack_rush.xob
+            │   │   backpack_rush_item.xob
+            │   │   backpack_rush_spawn.xob
+            │   │   backpack_rush_spawn_item.xob
+            │   │
+            │   └───Data
+            │           backpack_defc.emat
+            │           backpack_defc_NMO.edds
+            │           backpack_defc_OD_BCR.edds
+            │           reaper_banger_ACU.emat
+            │           reaper_banger_ACU_BCR.edds
+            │           reaper_banger_FDE.emat
+            │           reaper_banger_FDE_BCR.edds
+            │           reaper_banger_Flecktarn.emat
+            │           reaper_banger_Flecktarn_BCR.edds
+            │           reaper_banger_Multiblack.emat
+            │           reaper_banger_Multiblack_BCR.edds
+            │           reaper_banger_Multicam.emat
+            │           reaper_banger_Multicam_BCR.edds
+            │           reaper_banger_NMO.edds
+            │           reaper_banger_OD.emat
+            │           reaper_banger_OD_BCR.edds
+            │           reaper_banger_Tropic.emat
+            │           reaper_banger_Tropic_BCR.edds
+            │           reaper_banger_Woodland.emat
+            │           reaper_banger_Woodland_BCR.edds
+            │           reaper_compact_pc_bag_ACU.emat
+            │           reaper_compact_pc_bag_ACU_BCR.edds
+            │           reaper_compact_pc_bag_Flecktarn.emat
+            │           reaper_compact_pc_bag_Flecktarn_BCR.edds
+            │           reaper_compact_pc_bag_MCAM.emat
+            │           reaper_compact_pc_bag_MCAM_BCR.edds
+            │           reaper_compact_pc_bag_Multiblack.emat
+            │           reaper_compact_pc_bag_MULTIBLACK_BCR.edds
+            │           reaper_compact_pc_bag_NMO.edds
+            │           reaper_compact_pc_bag_OD.emat
+            │           reaper_compact_pc_bag_OD_BCR.edds
+            │           reaper_compact_pc_bag_Tropic.emat
+            │           reaper_compact_pc_bag_Tropic_BCR.edds
+            │           reaper_compact_pc_bag_Woodland.emat
+            │           reaper_compact_pc_bag_Woodland_BCR.edds
+            │
+            ├───Beards
+            │   │   beard2.xob
+            │   │   beard3.xob
+            │   │   beard4.xob
+            │   │
+            │   ├───Data
+            │   │       beard_1.emat
+            │   │       beard_1_A.edds
+            │   │       beard_1_BCR.edds
+            │   │       beard_1_BR.emat
+            │   │       beard_1_br_BCR.edds
+            │   │       beard_1_NMO.edds
+            │   │       beard_3.emat
+            │   │       beard_3_A.edds
+            │   │       beard_3_BCR.edds
+            │   │       beard_3_NMO.edds
+            │   │       beard_4.emat
+            │   │       beard_4_A.edds
+            │   │       beard_4_BCR.edds
+            │   │       beard_4_NMO.edds
+            │   │
+            │   └───Heads
+            │           Head_Black_02.emat
+            │           Head_Black_02_beard_BCR.edds
+            │           Head_Black_02_beard_wound_BCR.edds
+            │           Head_Black_02_neck.emat
+            │           Head_Black_02_wound.emat
+            │           Head_Black_02_wound_neck.emat
+            │           Head_White_02.emat
+            │           Head_White_02_beard_BCR.edds
+            │           Head_White_02_beard_wound_BCR.edds
+            │           Head_White_02_neck.emat
+            │           Head_White_02_wound.emat
+            │           Head_White_02_wound_neck.emat
+            │           Head_White_05.emat
+            │           Head_White_05_beard_BCR.edds
+            │           Head_White_05_beard_wound_BCR.edds
+            │           Head_White_05_neck.emat
+            │           Head_White_05_wound.emat
+            │           Head_White_05_wound_neck.emat
+            │           Head_White_06.emat
+            │           Head_White_06_beard_BCR.edds
+            │           Head_White_06_beard_wound_BCR.edds
+            │           Head_White_06_neck.emat
+            │           Head_White_06_wound.emat
+            │           Head_White_06_wound_neck.emat
+            │
+            ├───Beret
+            │   │   Beret.xob
+            │   │   Beret_item.xob
+            │   │
+            │   └───Data
+            │           beret_black.emat
+            │           beret_black_BCR.edds
+            │           beret_blue.emat
+            │           beret_blue_BCR.edds
+            │           beret_red.emat
+            │           beret_red_BCR.edds
+            │           beret_red_NMO.edds
+            │
+            ├───Boots
+            │       CombatBoots.xob
+            │       CombatBoots_item.xob
+            │       HiKingBoots.xob
+            │       HiKingBoots_item.xob
+            │       hitop_worn.xob
+            │       hitop_worn_item.xob
+            │       LOWABoots.xob
+            │       LOWABoots_item.xob
+            │       PambaHI.xob
+            │       PambaHI_item.xob
+            │
+            ├───Cargo_pants
+            │   │   cargo_pants.xob
+            │   │   cargo_pants2.xob
+            │   │   cargo_pants2_item.xob
+            │   │   cargo_pants_item.xob
+            │   │
+            │   └───Data
+            │           cargopants02_brown_dirty.emat
+            │           cargopants02_brown_dirty_BCR.edds
+            │           cargopants02_brown_dirty_blood_BCR.edds
+            │           cargopants02_clean_NMO.edds
+            │           cargopants02_dirty_NMO.edds
+            │           cargopants02_FDE_clean.emat
+            │           cargopants02_FDE_clean_BCR.edds
+            │           cargopants02_FDE_clean_blood_BCR.edds
+            │           cargopants02_OD_camo_dirty.emat
+            │           cargopants02_OD_camo_dirty_BCR.edds
+            │           cargopants02_OD_camo_dirty_blood_BCR.edds
+            │           cargopants02_OD_dirty.emat
+            │           cargopants02_OD_dirty_BCR.edds
+            │           cargopants02_OD_dirty_blood_BCR.edds
+            │           cargopants02_OD_pixel_dirty.emat
+            │           cargopants02_OD_pixel_dirty_BCR.edds
+            │           cargopants02_OD_pixel_dirty_blood_BCR.edds
+            │
+            ├───ChestRig
+            │   │   ChestRig1.xob
+            │   │   ChestRig1_item.xob
+            │   │   ChestRig2.xob
+            │   │   ChestRig2_item.xob
+            │   │
+            │   └───Data
+            │           ChestRig1_BK.emat
+            │           ChestRig1_BK_BCR.edds
+            │           ChestRig1_BK_pouches.emat
+            │           ChestRig1_FDE.emat
+            │           ChestRig1_FDE_BCR.edds
+            │           ChestRig1_FDE_pouches.emat
+            │           ChestRig1_NMO.edds
+            │           ChestRig1_OD.emat
+            │           ChestRig1_OD_BCR.edds
+            │           ChestRig1_OD_pouches.emat
+            │           ChestRig1_pouches_BK_BCR.edds
+            │           ChestRig1_pouches_FDE_BCR.edds
+            │           ChestRig1_pouches_NMO.edds
+            │           ChestRig1_pouches_OD_BCR.edds
+            │           chestrig2_Flecktarn.emat
+            │           ChestRig2_flecktarn_BCR.edds
+            │           chestrig2_mags.emat
+            │           ChestRig2_mags_BCR.edds
+            │           ChestRig2_mags_NMO.edds
+            │           chestrig2_MultiBlack.emat
+            │           ChestRig2_multiblack_BCR.edds
+            │           chestrig2_Multicam.emat
+            │           ChestRig2_multicam_BCR.edds
+            │           ChestRig2_NMO.edds
+            │           chestrig2_OD.emat
+            │           ChestRig2_OD_BCR.edds
+            │           chestrig2_Tropic.emat
+            │           ChestRig2_tropic_BCR.edds
+            │           chestrig2_Woodland.emat
+            │           ChestRig2_woodland_BCR.edds
+            │
+            ├───CombatBelt
+            │       CombatBelt1.xob
+            │       CombatBelt1_item.xob
+            │       CombatBelt2.xob
+            │       CombatBelt2_item.xob
+            │
+            ├───CombatPants
+            │       CombatPants1.xob
+            │       CombatPants2.xob
+            │       CombatPants_item.xob
+            │
+            ├───CombatShirts
+            │       CombatShirt1.xob
+            │       CombatShirt2.xob
+            │       CombatShirt_item.xob
+            │
+            ├───Female_commander_uniform
+            │   │   female_commander_boots.xob
+            │   │   female_commander_boots_item.xob
+            │   │   female_commander_hat.xob
+            │   │   female_commander_hat_item.xob
+            │   │   female_commander_pants.xob
+            │   │   female_commander_pants_item.xob
+            │   │   female_commander_uniform.xob
+            │   │   female_commander_uniform_item.xob
+            │   │
+            │   └───Data
+            │           female_uniform_arms.emat
+            │           female_uniform_arms_BCR.edds
+            │           female_uniform_arms_blood_BCR.edds
+            │           female_uniform_arms_NMO.edds
+            │           female_uniform_gear.emat
+            │           female_uniform_gear_BCR.edds
+            │           female_uniform_gear_NMO.edds
+            │           female_uniform_hat.emat
+            │           female_uniform_hat_BCR.edds
+            │           female_uniform_hat_NMO.edds
+            │           female_uniform_pants.emat
+            │           female_uniform_pants_BCR.edds
+            │           female_uniform_pants_blood_BCR.edds
+            │           female_uniform_pants_NMO.edds
+            │           female_uniform_patches.emat
+            │           female_uniform_patches_BCR.edds
+            │           female_uniform_patches_NMO.edds
+            │           female_uniform_torso.emat
+            │           female_uniform_torso_BCR.edds
+            │           female_uniform_torso_blood_BCR.edds
+            │           female_uniform_torso_NMO.edds
+            │
+            ├───Flannel_shirt
+            │   │   flannel_shirt.xob
+            │   │   flannel_shirt_item.xob
+            │   │
+            │   └───Data
+            │           flannel_BK_BCR.edds
+            │           flannel_BK_blood_BCR.edds
+            │           flannel_RED_BCR.edds
+            │           flannel_RED_blood_BCR.edds
+            │           flannel_RED_NMO.edds
+            │           flannel_shirt_bk.emat
+            │           flannel_shirt_red.emat
+            │
+            ├───Ghillie
+            │   │   ghillie_pants.xob
+            │   │   ghillie_pants_item.xob
+            │   │   ghillie_shirt.xob
+            │   │   ghillie_shirt_item.xob
+            │   │
+            │   └───Data
+            │           ghillie_foliage.emat
+            │           ghillie_foliage_A.edds
+            │           ghillie_foliage_BCR.edds
+            │           ghillie_foliage_blood_BCR.edds
+            │           ghillie_foliage_hat.emat
+            │           ghillie_foliage_NMO.edds
+            │           ghillie_greenland.emat
+            │           ghillie_greenland_A.edds
+            │           ghillie_greenland_BCR.edds
+            │           ghillie_greenland_blood_BCR.edds
+            │           ghillie_greenland_hat.emat
+            │           ghillie_greenland_pants.emat
+            │           ghillie_greenland_top.emat
+            │           ghillie_pants.emat
+            │           ghillie_pants_BCR.edds
+            │           ghillie_pants_blood_BCR.edds
+            │           ghillie_pants_greenland_BCR.edds
+            │           ghillie_pants_greenland_blood_BCR.edds
+            │           ghillie_pants_NMO.edds
+            │           ghillie_top.emat
+            │           ghillie_top_BCR.edds
+            │           ghillie_top_blood_BCR.edds
+            │           ghillie_top_greenland_BCR.edds
+            │           ghillie_top_greenland_blood_BCR.edds
+            │           ghillie_top_NMO.edds
+            │
+            ├───Gloves
+            │   │   FerroX_Delta.xob
+            │   │   FerroX_Delta_item.xob
+            │   │   Gloves1_BK.xob
+            │   │   Gloves1_item.xob
+            │   │   mechanix.xob
+            │   │   mechanix_item.xob
+            │   │   tactical_gloves.xob
+            │   │   tactical_gloves_item.xob
+            │   │
+            │   └───Data
+            │           REAPER_Ferro_Delta_BK.emat
+            │           REAPER_Ferro_Delta_BK_BCR.edds
+            │           REAPER_Ferro_Delta_BK_NMO.edds
+            │           REAPER_Ferro_Delta_FDE.emat
+            │           REAPER_Ferro_Delta_FDE_BCR.edds
+            │           REAPER_Ferro_Delta_OD.emat
+            │           REAPER_Ferro_Delta_OD_BCR.edds
+            │           reaper_tac_gloves.emat
+            │           reaper_tac_gloves_BK_BCR.edds
+            │           reaper_tac_gloves_NMO.edds
+            │           reaper_tac_gloves_OD.emat
+            │           reaper_tac_gloves_OD_BCR.edds
+            │
+            ├───HeadGear
+            │   │   ACH_SDR_helmet.xob
+            │   │   ACH_SDR_helmet_item.xob
+            │   │   balaclava.xob
+            │   │   balaclava_item.xob
+            │   │   bolle_contour.xob
+            │   │   bolle_contour_item.xob
+            │   │   Boonie_ghillie.xob
+            │   │   Boonie_ghillie_item.xob
+            │   │   Boonie_Hat.xob
+            │   │   Boonie_Hat_item.xob
+            │   │   ess_rollbar.xob
+            │   │   ess_rollbar_item.xob
+            │   │   Fleece_Hat.xob
+            │   │   Fleece_Hat_item.xob
+            │   │   H1_item.xob
+            │   │   H1_light.xob
+            │   │   H1_light_slot_peltor.xob
+            │   │   H2_item.xob
+            │   │   H2_peltor.xob
+            │   │   Helmet_Goggles1.xob
+            │   │   Helmet_Goggles1_preview.xob
+            │   │   Helmet_NVG.xob
+            │   │   Helmet_NVG_GP18.xob
+            │   │   Helmet_NVG_GP18_preview.xob
+            │   │   Helmet_NVG_no_pouch.xob
+            │   │   Helmet_NVG_preview.xob
+            │   │   Helmet_NVG_preview_no_pouch.xob
+            │   │   Helmet_Taclight.xob
+            │   │   Helmet_Taclight_preview.xob
+            │   │   oakley_m_frame.xob
+            │   │   oakley_m_frame_item.xob
+            │   │
+            │   └───BaseballCap
+            │       │   baseball_cap_front.xob
+            │       │   baseball_cap_front_peltor.xob
+            │       │   baseball_cap_front_peltor_item.xob
+            │       │   baseball_cap_item.xob
+            │       │   baseball_cap_rear.xob
+            │       │
+            │       └───Data
+            │               basecap.emat
+            │               basecap_BK_BCR.edds
+            │               basecap_comtac_FDE.emat
+            │               basecap_comtac_OD.emat
+            │               basecap_NMO.edds
+            │               basecap_peltor_FDE_BCR.edds
+            │               basecap_peltor_NMO.edds
+            │               basecap_peltor_OD_BCR.edds
+            │               reaper_comtac_FDE.emat
+            │               reaper_comtac_FDE_BCR.edds
+            │               reaper_comtac_NMO.edds
+            │               reaper_comtac_OD.emat
+            │               reaper_comtac_OD_BCR.edds
+            │
+            ├───Hoodie
+            │       hoodie.xob
+            │       hoodie_item.xob
+            │
+            ├───Jeans_01
+            │       jeans01.xob
+            │       jeans01_item.xob
+            │
+            ├───mil_shirt_light
+            │       mil_shirt_light.xob
+            │       mil_shirt_light_item.xob
+            │
+            ├───Patriot_Jacket
+            │       helikon_patriot.xob
+            │       helikon_patriot_item.xob
+            │
+            ├───PlateCarrier
+            │       PC7_Crye_JPC.xob
+            │       PC7_Crye_JPC_item.xob
+            │       PC_S1_AR15_light.xob
+            │       PC_S1_AR15_light_item.xob
+            │       PC_S2_AR15_medium.xob
+            │       PC_S2_AR15_medium_item.xob
+            │       PC_S3_AR15_medium_radio.xob
+            │       PC_S3_AR15_medium_radio_item.xob
+            │       PC_S4_AR15_heavy.xob
+            │       PC_S4_AR15_heavy_item.xob
+            │       PC_S5_AR.xob
+            │       PC_S5_AR_item.xob
+            │       PC_S6_AK.xob
+            │       PC_S6_AK_item.xob
+            │
+            ├───Poloshirt
+            │       poloshirt.xob
+            │       poloshirt_item.xob
+            │
+            ├───shirt_out
+            │   │   reaper_shirt_out.xob
+            │   │   reaper_shirt_out_item.xob
+            │   │
+            │   └───Data
+            │           civ_shirt_out_01.emat
+            │           civ_shirt_out_01_BCR.edds
+            │           civ_shirt_out_01_blood_BCR.edds
+            │           civ_shirt_out_02.emat
+            │           civ_shirt_out_02_BCR.edds
+            │           civ_shirt_out_02_blood_BCR.edds
+            │           civ_shirt_out_03.emat
+            │           civ_shirt_out_03_BCR.edds
+            │           civ_shirt_out_03_blood_BCR.edds
+            │           civ_shirt_out_04.emat
+            │           civ_shirt_out_04_BCR.edds
+            │           civ_shirt_out_04_blood_BCR.edds
+            │           civ_shirt_out_05.emat
+            │           civ_shirt_out_05_BCR.edds
+            │           civ_shirt_out_05_blood_BCR.edds
+            │           civ_shirt_out_06.emat
+            │           civ_shirt_out_06_BCR.edds
+            │           civ_shirt_out_06_blood_BCR.edds
+            │           civ_shirt_out_07.emat
+            │           civ_shirt_out_07_BCR.edds
+            │           civ_shirt_out_07_blood_BCR.edds
+            │           civ_shirt_out_08.emat
+            │           civ_shirt_out_08_BCR.edds
+            │           civ_shirt_out_08_blood_BCR.edds
+            │           civ_shirt_out_NMO.edds
+            │
+            ├───Sleeve_shirt
+            │       sleeved_shirt.xob
+            │       sleeved_shirt_item.xob
+            │
+            └───Textures
+                │   NVG_alpha_169.edds
+                │   NVG_alpha_219.edds
+                │   NVG_COLORS_169.emat
+                │   NVG_COLORS_219.emat
+                │   NVG_GP18_alpha_169.edds
+                │   NVG_GP18_alpha_219.edds
+                │   NVG_GP18_COLORS_169.emat
+                │   NVG_GP18_COLORS_219.emat
+                │   NVG_Grain.emat
+                │
+                ├───ACH_SDR_helmet
+                │       ACH_SDR_FDE.emat
+                │       ACH_SDR_FDE_BCR.edds
+                │       ACH_SDR_NMO.edds
+                │       ACH_SDR_OD.emat
+                │       ACH_SDR_OD_BCR.edds
+                │
+                ├───Backpacks
+                │       backpack_rush_molle_BK.emat
+                │       backpack_rush_molle_black_BCR.edds
+                │       backpack_rush_molle_FDE.emat
+                │       backpack_rush_molle_FDE_BCR.edds
+                │       backpack_rush_molle_flecktarn.emat
+                │       backpack_rush_molle_flecktarn_BCR.edds
+                │       backpack_rush_molle_multicam.emat
+                │       backpack_rush_molle_multicam_BCR.edds
+                │       backpack_rush_molle_NMO.edds
+                │       backpack_rush_molle_OD.emat
+                │       backpack_rush_molle_OD_BCR.edds
+                │       backpack_rush_molle_woodland.emat
+                │       backpack_rush_molle_woodland_BCR.edds
+                │
+                ├───Balaclava
+                │       balaclava_BK.emat
+                │       balaclava_BK_BCR.edds
+                │       balaclava_blue.emat
+                │       balaclava_blue_BCR.edds
+                │       balaclava_green.emat
+                │       balaclava_green_BCR.edds
+                │       balaclava_NMO.edds
+                │       balaclava_red.emat
+                │       balaclava_red_BCR.edds
+                │       balaclava_skull.emat
+                │       balaclava_skull_BCR.edds
+                │       balaclava_tex.emat
+                │       balaclava_tex_BCR.edds
+                │
+                ├───bolle_contour
+                │       contour_A.edds
+                │       contour_BK.emat
+                │       contour_BK_BCR.edds
+                │       contour_FDE.emat
+                │       contour_FDE_BCR.edds
+                │       contour_glasses.emat
+                │       contour_NMO.edds
+                │
+                ├───Boonie
+                │       Bonnie_Ghillie_foliage_BCR.edds
+                │       Bonnie_Ghillie_Greenland_BCR.edds
+                │       Bonnie_Hat_BK_BCR.edds
+                │       Bonnie_Hat_FDE_BCR.edds
+                │       Bonnie_Hat_multicam_BCR.edds
+                │       Bonnie_Hat_NMO.edds
+                │       Bonnie_Hat_OD_BCR.edds
+                │       Boonie_Ghillie_foliage.emat
+                │       Boonie_Ghillie_greenland.emat
+                │       Boonie_Hat_BK.emat
+                │       Boonie_Hat_FDE.emat
+                │       Boonie_Hat_Multicam.emat
+                │       Boonie_Hat_OD.emat
+                │       foliage.emat.emat
+                │       greenland.emat.emat
+                │
+                ├───cargo_pants
+                │       cargo_pants_BK.emat
+                │       cargo_pants_BK_BCR.edds
+                │       cargo_pants_BK_blood_BCR.edds
+                │       cargo_pants_DESERT.emat
+                │       cargo_pants_DESERT_BCR.edds
+                │       cargo_pants_DESERT_blood_BCR.edds
+                │       cargo_pants_FDE.emat
+                │       cargo_pants_FDE_BCR.edds
+                │       cargo_pants_FDE_blood_BCR.edds
+                │       cargo_pants_GREY.emat
+                │       cargo_pants_GREY_BCR.edds
+                │       cargo_pants_GREY_blood_BCR.edds
+                │       cargo_pants_NMO.edds
+                │       cargo_pants_OD.emat
+                │       cargo_pants_OD_BCR.edds
+                │       cargo_pants_OD_blood_BCR.edds
+                │       cargo_pants_URBAN.emat
+                │       cargo_pants_URBAN_BCR.edds
+                │       cargo_pants_URBAN_blood_BCR.edds
+                │       cargo_pants_WOODLAND.emat
+                │       cargo_pants_WOODLAND_BCR.edds
+                │       cargo_pants_WOODLAND_blood_BCR.edds
+                │
+                ├───Crye_JPC_carrier
+                │       JPC_bund_ACU.emat
+                │       JPC_bund_acu_BCR.edds
+                │       JPC_bund_fde.emat
+                │       JPC_bund_fde_BCR.edds
+                │       JPC_bund_flecktarn.emat
+                │       JPC_bund_flecktarn_BCR.edds
+                │       JPC_bund_multiblack.emat
+                │       JPC_bund_multiblack_BCR.edds
+                │       JPC_bund_multicam.emat
+                │       JPC_bund_multicam_BCR.edds
+                │       JPC_bund_NMO.edds
+                │       JPC_bund_tropic.emat
+                │       JPC_bund_tropic_BCR.edds
+                │       JPC_bund_woodland.emat
+                │       JPC_bund_woodland_BCR.edds
+                │       JPC_main_ACU.emat
+                │       JPC_main_acu_BCR.edds
+                │       JPC_main_fde.emat
+                │       JPC_main_fde_BCR.edds
+                │       JPC_main_flecktarn.emat
+                │       JPC_main_flecktarn_BCR.edds
+                │       JPC_main_multiblack.emat
+                │       JPC_main_multiblack_BCR.edds
+                │       JPC_main_multicam.emat
+                │       JPC_main_multicam_BCR.edds
+                │       JPC_main_NMO.edds
+                │       JPC_main_tropic.emat
+                │       JPC_main_tropic_BCR.edds
+                │       JPC_main_woodland.emat
+                │       JPC_main_woodland_BCR.edds
+                │
+                ├───ess_rollbar
+                │       rollbar_A.edds
+                │       rollbar_BK.emat
+                │       rollbar_BK_BCR.edds
+                │       rollbar_glasses.emat
+                │       rollbar_NMO.edds
+                │       rollbar_TAN.emat
+                │       rollbar_TAN_BCR.edds
+                │
+                ├───Fleece_Hat
+                │       Fleece_HAT_BK.emat
+                │       Fleece_HAT_BK_BCR.edds
+                │       Fleece_HAT_FDE.emat
+                │       Fleece_HAT_FDE_BCR.edds
+                │       Fleece_HAT_NMO.edds
+                │       Fleece_HAT_OD.emat
+                │       Fleece_HAT_OD_BCR.edds
+                │
+                ├───HiKing_Boots
+                │       hiking_boots.emat
+                │       hiking_boots_BCR.edds
+                │       hiking_boots_FDE.emat
+                │       hiking_boots_FDE_BCR.edds
+                │       hiking_boots_NMO.edds
+                │
+                ├───hitops_worn
+                │       hitops_BCR.edds
+                │       hitops_NMO.edds
+                │       hitop_worn.emat
+                │
+                ├───Hoodie
+                │       hoodie_BK.emat
+                │       hoodie_BK_BCR.edds
+                │       hoodie_BK_blood_BCR.edds
+                │       hoodie_BK_worn.emat
+                │       hoodie_BK_worn_BCR.edds
+                │       hoodie_BLOOD_VFX.edds
+                │       hoodie_blue.emat
+                │       hoodie_blue_BCR.edds
+                │       hoodie_blue_blood_BCR.edds
+                │       hoodie_blue_worn.emat
+                │       hoodie_blue_worn_BCR.edds
+                │       hoodie_brown.emat
+                │       hoodie_brown_BCR.edds
+                │       hoodie_brown_blood_BCR.edds
+                │       hoodie_brown_worn.emat
+                │       hoodie_brown_worn_BCR.edds
+                │       hoodie_grey.emat
+                │       hoodie_grey_BCR.edds
+                │       hoodie_grey_blood_BCR.edds
+                │       hoodie_grey_worn.emat
+                │       hoodie_grey_worn_BCR.edds
+                │       hoodie_NMO.edds
+                │
+                ├───Jeans_01
+                │       jeans_01_black.emat
+                │       jeans_01_black_BCR.edds
+                │       jeans_01_black_blood_BCR.edds
+                │       jeans_01_BLOOD_VFX.edds
+                │       jeans_01_bright.emat
+                │       jeans_01_bright_BCR.edds
+                │       jeans_01_bright_blood_BCR.edds
+                │       jeans_01_dark_BCR.edds
+                │       jeans_01_dark_blood_BCR.edds
+                │       jeans_01_medium.emat
+                │       jeans_01_NMO.edds
+                │
+                ├───LOWA_Boots
+                │       boots_lowa.emat
+                │       LOWA_BCR.edds
+                │       LOWA_NMO.edds
+                │
+                ├───mechanix
+                │       mechanicx.emat
+                │       mechanicx_BKW.emat
+                │       mechanicx_FDE.emat
+                │       mechanix_BKW_BCR.edds
+                │       mechanix_BK_BCR.edds
+                │       mechanix_FDE_BCR.edds
+                │       mechanix_NMO.edds
+                │
+                ├───mil_shirt_light
+                │       mil_shirt_light_BK_dirty.emat
+                │       mil_shirt_light_black_BCR.edds
+                │       mil_shirt_light_black_blood_BCR.edds
+                │       mil_shirt_light_darkTropic.emat
+                │       mil_shirt_light_darkTropic_BCR.edds
+                │       mil_shirt_light_darkTropic_blood_BCR.edds
+                │       mil_shirt_light_fde_BCR.edds
+                │       mil_shirt_light_fde_blood_BCR.edds
+                │       mil_shirt_light_FDE_clean.emat
+                │       mil_shirt_light_FDE_dirty.emat
+                │       mil_shirt_light_fde_dirty_BCR.edds
+                │       mil_shirt_light_NMO.edds
+                │       mil_shirt_light_od_blood_BCR.edds
+                │       mil_shirt_light_OD_clean.emat
+                │       mil_shirt_light_od_clean_BCR.edds
+                │       mil_shirt_light_OD_dirty.emat
+                │       mil_shirt_light_od_dirty_BCR.edds
+                │
+                ├───NVG_GP18
+                │       GP18_BK_BCR.edds
+                │       GP18_EM.edds
+                │       GP18_FDE_BCR.edds
+                │       GP18_NMO.edds
+                │       GP18_NVG_BK.emat
+                │       GP18_NVG_FDE.emat
+                │
+                ├───oakley_m_frame
+                │       oakley_M_frame.emat
+                │       oakley_M_frame_glasses.emat
+                │       oa_mframe_A.edds
+                │       oa_mframe_BCR.edds
+                │       oa_mframe_NMO.edds
+                │
+                ├───PampaHI
+                │       PampaHI_BK.emat
+                │       PampaHi_Black_BCR.edds
+                │       PampaHI_FDE.emat
+                │       PampaHi_FDE_BCR.edds
+                │       PampaHI_grey.emat
+                │       PampaHi_Grey_BCR.edds
+                │       PampaHi_NMO.edds
+                │       PampaHI_OD.emat
+                │       PampaHi_OD_BCR.edds
+                │
+                ├───Patriot_Jacket
+                │       patriot_black_BCR.edds
+                │       patriot_black_blood_BCR.edds
+                │       patriot_brown_BCR.edds
+                │       patriot_brown_blood_BCR.edds
+                │       patriot_green_BCR.edds
+                │       patriot_green_blood_BCR.edds
+                │       patriot_jacket_black.emat
+                │       patriot_jacket_brown.emat
+                │       patriot_jacket_green.emat
+                │       patriot_jacket_woodland.emat
+                │       patriot_NMO.edds
+                │       patriot_woodland_BCR.edds
+                │       patriot_woodland_blood_BCR.edds
+                │
+                ├───poloshirt
+                │       poloshirt_BK.emat
+                │       poloshirt_BK_BCR.edds
+                │       poloshirt_BK_blood_BCR.edds
+                │       poloshirt_blue.emat
+                │       poloshirt_blue_BCR.edds
+                │       poloshirt_blue_blood_BCR.edds
+                │       poloshirt_fde.emat
+                │       poloshirt_FDE_BCR.edds
+                │       poloshirt_FDE_blood_BCR.edds
+                │       poloshirt_NMO.edds
+                │       poloshirt_od.emat
+                │       poloshirt_OD_BCR.edds
+                │       poloshirt_OD_blood_BCR.edds
+                │
+                ├───Sleeve_shirt
+                │       sleeved_shirt_BK.emat
+                │       sleeved_shirt_BL.emat
+                │       sleeved_shirt_RED.emat
+                │       sleeve_shirt_BK_BCR.edds
+                │       sleeve_shirt_BK_blood_BCR.edds
+                │       sleeve_shirt_BL_BCR.edds
+                │       sleeve_shirt_BL_blood_BCR.edds
+                │       sleeve_shirt_NMO.edds
+                │       sleeve_shirt_RED_BCR.edds
+                │       sleeve_shirt_RED_blood_BCR.edds
+                │
+                ├───TAC_PlateCarrier
+                │       carrier_FDE.emat
+                │       carrier_FDE_BCR.edds
+                │       carrier_GREY.emat
+                │       carrier_GREY_BCR.edds
+                │       carrier_NMO.edds
+                │       carrier_OD.emat
+                │       carrier_OD_BCR.edds
+                │       carrier_TAN.emat
+                │       carrier_TAN_BCR.edds
+                │       pouches_GREY.emat
+                │       pouches_GREY_BCR.edds
+                │       pouches_NMO.edds
+                │       pouches_OD.emat
+                │       pouches_OD_BCR.edds
+                │       pouches_TAN.emat
+                │       pouches_TAN_BCR.edds
+                │
+                └───UV2
+                        UV2_ACU.emat
+                        UV2_ACU_BCR.edds
+                        UV2_ACU_BLOOD_BCR.edds
+                        UV2_BK.emat
+                        UV2_BK_BCR.edds
+                        UV2_BK_BLOOD_BCR.edds
+                        UV2_BLOOD_VFX.edds
+                        UV2_FDE.emat
+                        UV2_FDE_BCR.edds
+                        UV2_FDE_BLOOD_BCR.edds
+                        UV2_FLECKTARN.emat
+                        UV2_FLECKTARN_BCR.edds
+                        UV2_FLECKTARN_BLOOD_BCR.edds
+                        UV2_MULTIBLACK.emat
+                        UV2_MULTIBLACK_BCR.edds
+                        UV2_MULTIBLACK_BLOOD_BCR.edds
+                        UV2_MULTICAM.emat
+                        UV2_MULTICAM_BCR.edds
+                        UV2_MULTICAM_BLOOD_BCR.edds
+                        UV2_NMO.edds
+                        UV2_OD.emat
+                        UV2_OD_BCR.edds
